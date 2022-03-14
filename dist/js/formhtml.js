@@ -1,0 +1,2 @@
+let htmlPartsLeft =
+  '<form id="form"><div><label>Name</label><input type="name" name="name" id="name"><span id="name-error-message"></span></div><div><div><label>Email</label><input type="text" name="email" autocomplete="email" id="email"><span id="email-error-message">Emailの形式では無いようです。</span></div><div><label>Tel</label><input type="tel" name="tel" size="15" maxlength="15" id="tel" autocomplete="tel"><span id="tel-error-message"></span></div><button id="btn"メールを送信</button></div></form>';

@@ -1,0 +1,565 @@
+/* Google Fonts */
+@import url(https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600&display=swap);
+
+@import './reset.scss';
+
+/* 変数 */
+$breakPoint-pc: 600px;
+$fontColor: #030508;
+$notoSerif: 'Noto Serif JP', serif, 'MS P明朝', 'ヒラギノ明朝';
+
+/* 関数 */
+@mixin max-screen($break-point) {
+  @media screen and(min-width:$break-point) {
+    @content;
+  }
+}
+
+@mixin min-screen($break-point) {
+  @media screen and(min-width:$break-point) {
+    @content;
+  }
+}
+
+@mixin flex($f-Disply, $f-Content, $f-Row, $f-align) {
+  display: $f-Disply;
+  justify-content: $f-Content;
+  flex-direction: $f-Row;
+  align-items: $f-align;
+}
+
+@mixin widthSize($widthSize) {
+  width: $widthSize;
+}
+
+@mixin heightSize($heightSize) {
+  height: $heightSize;
+}
+
+@mixin fz($size, $weight) {
+  font-size: ($size / 10) + rem;
+  font-weight: $weight;
+}
+
+@mixin margin($maValue) {
+  margin: $maValue;
+}
+
+@mixin padding($paValue) {
+  padding: $paValue;
+}
+
+@mixin border {
+  border: 1px solid $fontColor;
+}
+
+@mixin radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin position($position, $top, $right, $bottom, $left) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin backColor($backColor) {
+  background-color: $backColor;
+}
+
+@mixin display($display) {
+  display: $display;
+}
+
+/* スタイル */
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: $fontColor;
+  @include min-screen($breakPoint-pc) {
+    font-size: 15px;
+  }
+  font-family: $notoSerif;
+  font-weight: 400;
+}
+
+/* j-wrapper */
+.j-wrapper {
+  @include min-screen($breakPoint-pc) {
+    width: 100%;
+    min-width: 1100px;
+  }
+}
+
+#main {
+  @include min-screen($breakPoint-pc) {
+    display: block;
+  }
+  overflow: hidden;
+}
+
+.j-lead {
+  @include heightSize(58rem);
+  position: relative;
+
+  .j-row {
+    @include flex(flex, space-between, row, flex-start);
+
+    .j-width-left {
+      @include widthSize(37%);
+      @include margin(3rem 5rem 0 5rem);
+
+      img {
+        width: 12.6rem;
+        @include heightSize(auto);
+        @include margin(0 0 5.7rem);
+      }
+
+      h3 {
+        @include fz(20, 400);
+        @include margin(0 0 3.9rem);
+      }
+
+      h1 {
+        @include fz(32, 300);
+        @include margin(0 0 3.3rem);
+        line-height: 1.5;
+      }
+
+      p {
+        @include padding(2rem 0 0);
+        border-top: 1px solid $fontColor;
+      }
+
+      .j-btn {
+        @include flex(flex, space-between, row, flex-start);
+        position: absolute;
+        bottom: 5rem;
+
+        p {
+          @include fz(16, 400);
+          @include border;
+          @include padding(1.4rem 0);
+          @include margin(0 2rem 0 0);
+          @include widthSize(17.6rem);
+          @include radius(3rem);
+          text-align: center;
+        }
+      }
+    }
+
+    .j-width-right {
+      @include widthSize(63%);
+      @include heightSize(53rem);
+      img {
+        object-fit: cover;
+        @include widthSize(100%);
+        @include heightSize(100%);
+      }
+    }
+  }
+}
+
+/* j-message */
+
+.j-message {
+  .j-row {
+    @include flex(flex, center, row, center);
+    @include margin(8rem 0 0);
+
+    .j-width-left {
+      @include widthSize(63rem);
+      @include margin(0 7rem 0 0);
+
+      img {
+        object-fit: cover;
+        @include widthSize(100%);
+        @include heightSize(100%);
+      }
+    }
+
+    p {
+      @include fz(18, 300);
+      -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
+      line-height: 2.1;
+      letter-spacing: 0.4rem;
+    }
+  }
+
+  .j-row-middle {
+    @extend .j-row;
+    @include flex(flex, flex-start, row, center);
+    .j-width-left {
+      @include widthSize(43rem);
+    }
+  }
+
+  .j-me-right {
+    @include position(relative, none, 0, 2.6rem, 0);
+    @include widthSize(25rem);
+    @include margin(0 10rem 0 auto);
+    img {
+      object-fit: cover;
+      @include widthSize(100%);
+      @include heightSize(100%);
+    }
+  }
+
+  .j-width-down {
+    @extend .j-row;
+    @include margin(5.4rem 0 0 0);
+
+    .j-width-left {
+      @include widthSize(auto);
+    }
+
+    .j-width-right {
+      @include widthSize(34rem);
+
+      img {
+        object-fit: cover;
+        @include widthSize(100%);
+        @include heightSize(100%);
+      }
+    }
+  }
+
+  .j-me-main {
+    @include widthSize(9rem);
+    @include margin(8rem auto 0);
+    img {
+      object-fit: cover;
+      @include widthSize(100%);
+      @include heightSize(100%);
+    }
+  }
+
+  .j-me-main-down {
+    @extend .j-row;
+
+    .j-width-left {
+      @include widthSize(30rem);
+    }
+  }
+
+  .j-me-left {
+    @extend .j-me-right;
+    @include position(relative, none, 0, 6rem, 0);
+    @include widthSize(22rem);
+    @include margin(0 0 0 8rem);
+  }
+
+  .j-me-btn {
+    @include flex(flex, center, row, flex-start);
+    @include margin(4rem 0 14rem);
+    p {
+      @include fz(16, 400);
+      @include border;
+      @include padding(1.4rem 0);
+      @include margin(0 1rem);
+      @include widthSize(17.6rem);
+      @include radius(3rem);
+      text-align: center;
+    }
+  }
+}
+
+/* j-concept */
+.j-concept {
+  @include backColor(#fdf1ec);
+  @include padding(0 0 14rem 0);
+
+  #concept {
+    text-align: center;
+
+    .j-co-list {
+      @include border;
+      @include widthSize(44rem);
+      @include margin(0 auto 3.5rem);
+
+      h3 {
+        @include fz(18, 400);
+        @include heightSize(6.2rem);
+        line-height: 6.2rem;
+        @include margin(1rem);
+        @include backColor(#fff);
+      }
+    }
+    p {
+      letter-spacing: 0.08rem;
+      line-height: 2;
+      @include margin(0 0 8rem 0);
+    }
+  }
+
+  .j-co-three {
+    @include flex(flex, center, row, flex-start);
+    @include margin(0 0 6.8rem 0);
+
+    p {
+      @include fz(20, 400);
+      text-align: center;
+      @include margin(0 1.5rem 0);
+      @include widthSize(18rem);
+      @include heightSize(18rem);
+      line-height: 18rem;
+      @include backColor(#fff);
+      @include radius(50%);
+    }
+  }
+
+  .j-co-down {
+    @include fz(22, 400);
+    text-align: center;
+    letter-spacing: 0.3rem;
+  }
+}
+
+/* j-flow */
+
+.j-flow {
+  @include padding(14rem 0 7rem);
+}
+
+.j-flow-title {
+  @include fz(26, 400);
+  text-align: center;
+  @include margin(0 0 6rem);
+  letter-spacing: 0.1rem;
+
+  span {
+    @include fz(12, 300);
+    @include display(block);
+    @include margin(2rem 0 0);
+  }
+}
+
+#flow {
+  .j-fl-list {
+    @include backColor(#f5f5f5);
+    @include padding(4rem);
+    @include flex(flex, center, row, flex-start);
+    @include widthSize(70rem);
+    @include margin(0 auto 7rem);
+
+    .j-fl-left {
+      @include widthSize(32rem);
+      @include margin(0 2.7rem 0 0);
+
+      h3 {
+        @include position(relative, 0, 0, 0, 0);
+        text-align: center;
+        @include padding(1.8rem 0);
+        @include backColor(#fff);
+        @include fz(18, 400);
+        @include border;
+        @include margin(0 0 1.8rem);
+
+        span:first-child {
+          @include position(absolute, 1.8rem, 0, 0, 1.8rem);
+          border-left: 1px solid #030508;
+          @include heightSize(1.7rem);
+          @include display(block);
+        }
+
+        span:last-child {
+          @include position(absolute, 1.8rem, 1.8rem, 0, 0);
+          border-right: 1px solid #030508;
+          @include heightSize(1.7rem);
+          @include display(block);
+        }
+      }
+
+      p {
+        line-height: 1.8;
+      }
+    }
+
+    .j-fl-right {
+      @include widthSize(24rem);
+
+      img {
+        object-fit: cover;
+        @include widthSize(100%);
+        @include heightSize(100%);
+      }
+    }
+  }
+}
+
+/* j-voice */
+.j-voice {
+  @include padding(0 0 4rem);
+}
+
+.j-voice-title {
+  @extend.j-flow-title;
+  @include margin(0 0 8rem);
+}
+
+.j-vo-list {
+  @include flex(flex, center, row, flex-start);
+  @include margin(0 auto 10rem);
+
+  .j-vo-left {
+    @include widthSize(39rem);
+    @include margin(0 5.7rem 0 0);
+
+    .j-vo-item {
+      @include widthSize(98%);
+      @include display(block);
+      @include heightSize(0.5rem);
+      border-top: 1px solid #030508;
+      border-right: 1px solid #030508;
+      @include backColor(#fff6e7);
+    }
+
+    h3 {
+      text-align: left;
+      @include heightSize(5rem);
+      line-height: 4.5rem;
+      @include fz(18, 400);
+      @include border;
+      @include margin(0 0 1.8rem);
+      letter-spacing: 0.1rem;
+
+      span {
+        @include fz(20, 400);
+        @include margin(0 2rem 0 0);
+        @include padding(0 1.8rem);
+        border-right: 1px solid #030508;
+        @include heightSize(100%);
+        @include display(inline-block);
+      }
+    }
+
+    p {
+      line-height: 2;
+    }
+  }
+
+  .j-vo-right {
+    @include widthSize(41rem);
+
+    img {
+      object-fit: cover;
+      @include widthSize(100%);
+      @include heightSize(100%);
+    }
+  }
+}
+
+/* j-youtube */
+.j-youtube {
+  @include margin(0 0 14rem);
+
+  #player {
+    @include display(block);
+    @include margin(0 auto);
+  }
+}
+
+/* j-inquiry */
+.j-inquiry {
+  @include margin(0 auto 14rem);
+}
+.j-inquiry-title {
+  @extend.j-flow-title;
+  @include margin(0 0 8rem);
+}
+
+.j-in-list {
+  @include widthSize(60rem);
+  @include margin(0 auto 7rem);
+
+  .j-in-top {
+    @include border;
+    border-radius: 1.5rem 1.5rem 0 0;
+    @include padding(3.8rem 3rem);
+    @include flex(flex, space-between, row, flex-start);
+
+    .inquiry-text {
+      @include fz(18, 400);
+
+      span {
+        letter-spacing: 0.1rem;
+        @include fz(20, 300);
+      }
+    }
+
+    .op_plus {
+      @include display(inline-block);
+      @include position(relative, 0, 0, 0, 0);
+      @include widthSize(1.4rem);
+      @include heightSize(1.4rem);
+    }
+    .op_plus:before,
+    .op_plus:after {
+      display: block;
+      content: '';
+      @include backColor(#030508);
+      @include position(absolute, 0.7rem, 0, 0, 0);
+      @include widthSize(1.4rem);
+      @include heightSize(0.1rem);
+    }
+    .op_plus:before {
+      @include widthSize(0.1rem);
+      @include heightSize(1.4rem);
+      top: 0;
+      left: 7px;
+    }
+  }
+  .answer-text {
+    @include backColor(#e4ede4);
+    @include padding(2rem 3rem 2.5rem);
+    line-height: 2;
+    border-radius: 0 0 1.5rem 1.5rem;
+  }
+}
+
+/* j-recommend */
+.j-recommend {
+  @include margin(0 auto 14rem);
+}
+
+.j-recommend-title {
+  @extend.j-flow-title;
+  @include margin(0 0 8rem);
+}
+
+#recommend {
+  @include flex(flex, center, row, flex-start);
+  @include backColor(#fff6e7);
+  @include padding(7rem 0);
+
+  .j-re-item {
+    @include margin(0 4rem);
+
+    .j-re-image {
+      @include widthSize(6rem);
+      @include margin(0 auto);
+
+      img {
+        object-fit: cover;
+        @include widthSize(100%);
+        @include heightSize(100%);
+      }
+    }
+    p {
+      text-align: center;
+      line-height: 1.8;
+      @include fz(18, 300);
+    }
+  }
+}
