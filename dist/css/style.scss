@@ -5,8 +5,12 @@
 
 /* 変数 */
 $breakPoint-pc: 600px;
-$fontColor: #030508;
 $notoSerif: 'Noto Serif JP', serif, 'MS P明朝', 'ヒラギノ明朝';
+
+/* カラー */
+$fontColor: #030508;
+$white: #fff;
+$red: #a52323;
 
 /* 関数 */
 @mixin max-screen($break-point) {
@@ -73,6 +77,16 @@ $notoSerif: 'Noto Serif JP', serif, 'MS P明朝', 'ヒラギノ明朝';
   display: $display;
 }
 
+@mixin color($color) {
+  color: $color;
+}
+
+@mixin cursor {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
 /* スタイル */
 html {
   font-size: 62.5%;
@@ -85,7 +99,7 @@ html {
 }
 
 body {
-  color: $fontColor;
+  @include color($fontColor);
   @include min-screen($breakPoint-pc) {
     font-size: 15px;
   }
@@ -262,7 +276,7 @@ body {
 
   .j-me-btn {
     @include flex(flex, center, row, flex-start);
-    @include margin(4rem 0 14rem);
+    @include margin(4rem 0 16rem);
     p {
       @include fz(16, 400);
       @include border;
@@ -278,7 +292,7 @@ body {
 /* j-concept */
 .j-concept {
   @include backColor(#fdf1ec);
-  @include padding(0 0 14rem 0);
+  @include padding(0 0 16rem 0);
 
   #concept {
     text-align: center;
@@ -293,7 +307,7 @@ body {
         @include heightSize(6.2rem);
         line-height: 6.2rem;
         @include margin(1rem);
-        @include backColor(#fff);
+        @include backColor($white);
       }
     }
     p {
@@ -314,7 +328,7 @@ body {
       @include widthSize(18rem);
       @include heightSize(18rem);
       line-height: 18rem;
-      @include backColor(#fff);
+      @include backColor($white);
       @include radius(50%);
     }
   }
@@ -329,7 +343,7 @@ body {
 /* j-flow */
 
 .j-flow {
-  @include padding(14rem 0 7rem);
+  @include padding(14rem 0 9rem);
 }
 
 .j-flow-title {
@@ -361,21 +375,21 @@ body {
         @include position(relative, 0, 0, 0, 0);
         text-align: center;
         @include padding(1.8rem 0);
-        @include backColor(#fff);
+        @include backColor($white);
         @include fz(18, 400);
         @include border;
         @include margin(0 0 1.8rem);
 
         span:first-child {
           @include position(absolute, 1.8rem, 0, 0, 1.8rem);
-          border-left: 1px solid #030508;
+          border-left: 1px solid $fontColor;
           @include heightSize(1.7rem);
           @include display(block);
         }
 
         span:last-child {
           @include position(absolute, 1.8rem, 1.8rem, 0, 0);
-          border-right: 1px solid #030508;
+          border-right: 1px solid $fontColor;
           @include heightSize(1.7rem);
           @include display(block);
         }
@@ -400,7 +414,7 @@ body {
 
 /* j-voice */
 .j-voice {
-  @include padding(0 0 4rem);
+  @include padding(0 0 6rem);
 }
 
 .j-voice-title {
@@ -420,8 +434,8 @@ body {
       @include widthSize(98%);
       @include display(block);
       @include heightSize(0.5rem);
-      border-top: 1px solid #030508;
-      border-right: 1px solid #030508;
+      border-top: 1px solid $fontColor;
+      border-right: 1px solid $fontColor;
       @include backColor(#fff6e7);
     }
 
@@ -438,7 +452,7 @@ body {
         @include fz(20, 400);
         @include margin(0 2rem 0 0);
         @include padding(0 1.8rem);
-        border-right: 1px solid #030508;
+        border-right: 1px solid $fontColor;
         @include heightSize(100%);
         @include display(inline-block);
       }
@@ -462,7 +476,7 @@ body {
 
 /* j-youtube */
 .j-youtube {
-  @include margin(0 0 14rem);
+  @include margin(0 0 16rem);
 
   #player {
     @include display(block);
@@ -472,7 +486,7 @@ body {
 
 /* j-inquiry */
 .j-inquiry {
-  @include margin(0 auto 14rem);
+  @include margin(0 auto 16rem);
 }
 .j-inquiry-title {
   @extend.j-flow-title;
@@ -508,7 +522,7 @@ body {
     .op_plus:after {
       display: block;
       content: '';
-      @include backColor(#030508);
+      @include backColor($fontColor);
       @include position(absolute, 0.7rem, 0, 0, 0);
       @include widthSize(1.4rem);
       @include heightSize(0.1rem);
@@ -520,27 +534,33 @@ body {
       left: 7px;
     }
   }
-  .answer-text {
+
+  .j-answer {
     @include backColor(#e4ede4);
-    @include padding(2rem 3rem 2.5rem);
-    line-height: 2;
     border-radius: 0 0 1.5rem 1.5rem;
+
+    .answer-text {
+      @include padding(2rem 3rem 2.5rem);
+      line-height: 2;
+    }
   }
 }
 
 /* j-recommend */
 .j-recommend {
-  @include margin(0 auto 14rem);
+  @include margin(0 auto 16rem);
 }
 
 .j-recommend-title {
   @extend.j-flow-title;
-  @include margin(0 0 8rem);
+  margin-bottom: -1rem;
 }
 
 #recommend {
   @include flex(flex, center, row, flex-start);
   @include backColor(#fff6e7);
+  @include widthSize(100%);
+  @include margin(0 auto);
   @include padding(7rem 0);
 
   .j-re-item {
@@ -561,5 +581,159 @@ body {
       line-height: 1.8;
       @include fz(18, 300);
     }
+  }
+}
+
+/* j-form */
+.j-form {
+  @include padding(0 0 10rem);
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.j-form-title {
+  @extend.j-flow-title;
+  @include margin(0 0 8rem);
+}
+
+.j-fo-top {
+  @include flex(flex, center, row, flex-start);
+  button {
+    @include backColor($white);
+    @include fz(20, 300);
+    font-family: $notoSerif;
+    border: none;
+    @include margin(0 2.5rem 7rem);
+    @include widthSize(13rem);
+    @include padding(0 0 4rem 0);
+    border-bottom: 3px solid #969696;
+    color: #969696;
+    @include cursor();
+  }
+
+  .j-bu-success {
+    border-bottom: 3px solid $fontColor;
+    @include color($fontColor);
+  }
+}
+
+form {
+  @include widthSize(86rem);
+  @include margin(0 auto);
+
+  .j-formIn {
+    @include padding(0 0 4rem 0);
+    border-bottom: 1px solid #f5f5f5;
+    @include margin(0 0 4rem 0);
+
+    .j-inner {
+      @include flex(flex, space-between, row, center);
+    }
+
+    .errorMe {
+      @include margin(3rem 0 0 25rem);
+      @include color($red);
+    }
+
+    label {
+      @include fz(16, 300);
+      @include widthSize(14rem);
+    }
+
+    span {
+      @include widthSize(5rem);
+      @include fz(12, 400);
+      @include padding(0.8rem 0);
+      @include margin(0 6rem 0 0);
+      @include color($red);
+      border: 1px solid $red;
+      text-align: center;
+    }
+
+    input {
+      outline: none;
+      @include heightSize(6rem);
+      @include widthSize(61rem);
+      @include backColor(#f5f5f5);
+      @include margin(0 0 0 auto);
+      @include padding(2rem);
+      border: none;
+      @include fz(15, 300);
+    }
+
+    input:-webkit-autofill {
+      box-shadow: 0 0 0px 1000px #f5f5f5 inset;
+    }
+
+    textarea {
+      outline: none;
+      @extend input;
+      @include heightSize(20rem);
+    }
+
+    .error {
+      @include backColor(rgb(255, 246, 246));
+    }
+  }
+
+  #send {
+    @include flex(flex, space-between, row, center);
+    @include widthSize(100%);
+    @include padding(0 0 4rem 0);
+    border-bottom: 1px solid #f5f5f5;
+    @include margin(0 0 4rem 0);
+
+    label {
+      @include fz(16, 300);
+      @include display(inline-block);
+      @include widthSize(25rem);
+    }
+
+    input[type='radio'] {
+      display: none;
+    }
+
+    .j-label {
+      @include fz(16, 300);
+      @include widthSize(18rem);
+      @include margin(0 2.5rem 0 0);
+      text-align: center;
+      @include heightSize(6rem);
+      line-height: 5.5rem;
+      border-radius: 1rem;
+      @include cursor();
+      @include backColor(#f5f5f5);
+      @include color(#969696);
+    }
+
+    .j-la-active {
+      @include border();
+      @include backColor($white);
+      @include color($fontColor);
+    }
+  }
+
+  button {
+    @include margin(4rem auto 0);
+    @include widthSize(34rem);
+    @include heightSize(7rem);
+    @include fz(18, 400);
+    font-family: $notoSerif;
+    line-height: 7rem;
+    border: none;
+  }
+
+  .btnEr {
+    @include backColor(#f5f5f5);
+  }
+
+  .btnSu {
+    @include backColor($white);
+    @include color($fontColor);
+    @include cursor();
+    @include border();
+  }
+
+  .j-formIn:last-child {
+    border: none;
   }
 }
