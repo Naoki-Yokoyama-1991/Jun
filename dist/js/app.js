@@ -84,9 +84,11 @@ function jsonOutput() {
           '</p>' +
           '<div class="section"><i class="op_plus"></i></div>' +
           '</div>' +
+          '<div id="j-answer">' +
           '<p class="answer-text">' +
           json[0].inquiry[i].answer +
           '</p>' +
+          '</div>' +
           '</div>';
 
         inHtml += htmlParts;

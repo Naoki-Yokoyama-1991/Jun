@@ -32,7 +32,7 @@
   <script defer type="text/javascript" src="./js/app.js"></script>
   <script defer type="text/javascript" src="./js/youtube.js"></script>
   <script defer type="text/javascript" src="./js/form.js"></script>
-  <script defer type="text/javascript" src="./js/formhtml.js"></script>
+  <script defer type="text/javascript" src="./js/query.js"></script>
 </head>
 
 <body>
@@ -201,37 +201,74 @@
       <!----- j-recommend ----->
       <section class="j-form">
         <h3 class="j-form-title">お問合せ・資料請求</h3>
-        <div id="formIn" class="formFirst">
-          <form id="form">
-            <div>
+        <div class="j-fo-top">
+          <button class="j-button j-bu-success">
+            お問合せ
+          </button>
+          <button class="j-button">
+            資料請求
+          </button>
+        </div>
+
+        <form id="form" method="post" action="">
+
+          <!----- name ----->
+          <div class="j-formIn">
+            <div class="j-inner">
               <label>お名前</label><input type="name" name="name" id="name">
-              <span id="name-error-message"></span>
             </div>
-            <div>
-              <div>
-                <label>メールアドレス</label><input type="text" name="email" autocomplete="email" id="email">
-                <span id="email-error-message"></span>
-              </div>
-              <div>
-                <label>お電話番号</label><input type="tel" name="tel" size="17" maxlength="17" id="tel"
-                  autocomplete="tel"><span id="tel-error-message"></span>
-              </div>
-              <div>
-                <label>郵便番号</label><input type="text" name="postal-code" size="10" maxlength="10" id="postal-code"
-                  autocomplete="postal-code"><span id="postal-code-error-message"></span>
-              </div>
-              <div>
-                <label>ご住所</label><input type="text" name="address" id="address"><span
-                  id="address-error-message"></span>
-              </div>
-              <div>
-                <label>お問合せ内容</label><textarea name="textarea" id="textarea" rows="6" cols="40"></textarea><span
-                  id="textarea-error-message"></span>
-              </div>
+            <p id="name-error-message"></p>
+          </div>
+          <!----- tel ----->
+          <div class="j-formIn">
+            <div class="j-inner">
+              <label>お電話番号</label><input type="tel" name="tel" size="17" maxlength="17" id="tel" autocomplete="tel">
+            </div>
+            <p id="tel-error-message"></p>
+          </div>
+          <!----- send ----->
+          <div id="send">
+            <label>資料送付先</label>
+            <input type="radio" name="send" value="ご自宅" id="laHouse">
+            <label for="laHouse" id="laAdress-button" class="j-label">ご自宅</label>
+            <input type="radio" name="send" value="Eメール" id="laEmail" checked>
+            <label for="laEmail" id="laEmail-button" class="j-label j-la-active">Eメール</label>
+          </div>
+          <!----- email ----->
+          <div class="j-formIn">
+            <div class="j-inner">
+              <label>メールアドレス</label><input type="text" name="email" autocomplete="email" id="email">
+            </div>
+            <p id="email-error-message"></p>
+          </div>
+          <!----- postal ----->
+          <div class="j-formIn">
+            <div class="j-inner">
+              <label>郵便番号</label><input type="text" name="postal-code" size="10" maxlength="10" id="postal-code"
+                autocomplete="postal-code">
+            </div>
+            <p id="postal-code-error-message"></p>
+          </div>
+          <!----- address ----->
+          <div class="j-formIn">
+            <div class="j-inner">
+              <label>ご住所</label><input type="text" name="address" id="address">
+            </div>
+            <p id="address-error-message"></p>
+          </div>
+          <!----- textarea ----->
+          <div class="j-formIn">
+            <div class="j-inner">
+              <label id="j-text">お問合せ内容</label><textarea name="textarea" id="textarea" rows="6" cols="40"></textarea>
+            </div>
+            <p id="textarea-error-message"></p>
+          </div>
+          <div class="j-formIn">
+            <div class="j-inner">
               <button id="btn">メールを送信</button>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </section>
     </main>
     <!----- footer ----->
