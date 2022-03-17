@@ -28,11 +28,7 @@
   <!-- css -->
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- js -->
-  <script defer type="text/javascript" src="./js/app.js"></script>
-  <script defer type="text/javascript" src="./js/youtube.js"></script>
-  <script defer type="text/javascript" src="./js/form.js"></script>
-  <script defer type="text/javascript" src="./js/query.js"></script>
+
 </head>
 
 <body>
@@ -44,25 +40,33 @@
       <section class="j-lead">
         <div class="j-row">
           <div class="j-width-left">
-            <img src="image/logo.png">
+            <img class="logo" src="image/logo.png" alt="">
             <h3>想い出に会い行こう</h3>
             <h1>バスで旅するお葬式<br />
               58万円より</h1>
-            <p>毎日新聞で紹介されました</p>
-            <div class="j-btn">
-              <p>資料を見てみる</p>
-              <p>0120-323-099</p>
+            <div class="bus">
+              <p>毎日新聞で紹介されました</p>
+              <img src="image/bus.jpg" alt="">
+              <span></span>
             </div>
-          </div>`
+            <div class="j-btn">
+              <a href="#jForm">
+                <p>資料を見てみる</p>
+              </a>
+              <a href="tel:0120323099">
+                <p>0120-323-099</p>
+              </a>
+            </div>
+          </div>
           <div class="j-width-right"><img src="image/top.jpg"></div>
         </div>
       </section>
 
       <!----- j-message ----->
       <section class="j-message">
-        <div class="j-row">
+        <div class="j-row scr-target">
           <div class="j-width-left">
-            <img src="image/message/me-1.jpg">
+            <img src="image/message/me-1.jpg" alt="">
           </div>
           <div class="j-width-right">
             <p>行けなかったあの旅行<br />
@@ -74,7 +78,7 @@
             </p>
           </div>
         </div>
-        <div class="j-row-middle">
+        <div class="j-row-middle scr-target">
           <div class="j-width-left">
             <img src="image/message/me-2.jpg">
           </div>
@@ -88,10 +92,10 @@
             </p>
           </div>
         </div>
-        <div class="j-me-right">
+        <div class="j-me-right scr-target">
           <img src="image/message/me-3.jpg">
         </div>
-        <div class="j-width-down">
+        <div class="j-width-down scr-target">
           <div class="j-width-left">
             <p>そんな気持ちから<br />
               生まれた新しい<br />
@@ -104,10 +108,10 @@
             <img src="image/message/me-4.jpg">
           </div>
         </div>
-        <div class="j-me-main">
+        <div class="j-me-main scr-target">
           <img src="image/message/me-5.jpg">
         </div>
-        <div class="j-me-main-down">
+        <div class="j-me-main-down scr-target">
           <div class="j-width-left">
             <img src="image/message/me-6.jpg">
           </div>
@@ -118,14 +122,19 @@
             </p>
           </div>
         </div>
-        <div class="j-me-left">
+        <div class="j-me-left scr-target">
           <img src="image/message/me-7.jpg">
         </div>
         <div class="j-me-btn">
-          <p>資料を見てみる</p>
-          <p>0120-323-099</p>
+          <a href="#jForm">
+            <p>資料を見てみる</p>
+          </a>
+          <a href="tel:0120323099">
+            <p>0120-323-099</p>
+          </a>
         </div>
       </section>
+
       <!----- j-concept ----->
       <section class="j-concept">
         <div id="concept">
@@ -199,7 +208,7 @@
       </section>
 
       <!----- j-recommend ----->
-      <section class="j-form">
+      <section class="j-form" id="jForm">
         <h3 class="j-form-title">お問合せ・資料請求</h3>
         <div class="j-fo-top">
           <button class="j-button j-bu-success">
@@ -275,6 +284,12 @@
     <footer></footer>
 
   </div>
+  <!-- js -->
+  <script defer type="text/javascript" src="./js/app.js"></script>
+  <script defer type="text/javascript" src="./js/youtube.js"></script>
+  <script defer type="text/javascript" src="./js/form.js"></script>
+  <script defer type="text/javascript" src="./js/query.js"></script>
+  <script defer type="text/javascript" src="./js/animation.js"></script>
 </body>
 
 </html>

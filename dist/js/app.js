@@ -29,6 +29,7 @@ function jsonOutput() {
       for (let i = 0; i < json[0].flow.length; i++) {
         let htmlParts =
           '<div class="j-fl-list" >' +
+          '<div class="j-triangle"></div>' +
           '<div class="j-fl-left">' +
           ' <h3>' +
           '<span></span>' +
@@ -82,9 +83,9 @@ function jsonOutput() {
           '<span>Q ）</span>' +
           json[0].inquiry[i].inquiry +
           '</p>' +
-          '<div class="section"><i class="op_plus"></i></div>' +
+          '<div class="section"><i class="op_plus plus"></i></div>' +
           '</div>' +
-          '<div id="j-answer">' +
+          '<div class="j-answer j-anDis">' +
           '<p class="answer-text">' +
           json[0].inquiry[i].answer +
           '</p>' +
