@@ -57,16 +57,16 @@ table {
 /* アニメーション設定 */
 .scr-target {
   opacity: 0;
-  -webkit-transform: translate3d(0, 30px, 0);
-          transform: translate3d(0, 30px, 0);
+  -webkit-transform: translate3d(0, 50px, 0);
+          transform: translate3d(0, 50px, 0);
 }
 
 .scr-target.is-active {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
-  -webkit-transition: 1s;
-  transition: 1s;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 /* スタイル */
@@ -129,9 +129,22 @@ a {
           align-items: flex-start;
 }
 
+@media screen and (max-width: 400px) {
+  .j-lead .j-row, .j-lead .j-message .j-row-middle, .j-message .j-lead .j-row-middle, .j-lead .j-message .j-width-down, .j-message .j-lead .j-width-down, .j-lead .j-message .j-me-main-down, .j-message .j-lead .j-me-main-down {
+    display: block;
+  }
+}
+
 .j-lead .j-row .j-width-left, .j-lead .j-message .j-row-middle .j-width-left, .j-message .j-lead .j-row-middle .j-width-left, .j-lead .j-message .j-width-down .j-width-left, .j-message .j-lead .j-width-down .j-width-left, .j-lead .j-message .j-me-main-down .j-width-left, .j-message .j-lead .j-me-main-down .j-width-left {
   width: 37%;
   margin: 3rem 5rem 0 5rem;
+}
+
+@media screen and (max-width: 400px) {
+  .j-lead .j-row .j-width-left, .j-lead .j-message .j-row-middle .j-width-left, .j-message .j-lead .j-row-middle .j-width-left, .j-lead .j-message .j-width-down .j-width-left, .j-message .j-lead .j-width-down .j-width-left, .j-lead .j-message .j-me-main-down .j-width-left, .j-message .j-lead .j-me-main-down .j-width-left {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .j-lead .j-row .j-width-left .logo, .j-lead .j-message .j-row-middle .j-width-left .logo, .j-message .j-lead .j-row-middle .j-width-left .logo, .j-lead .j-message .j-width-down .j-width-left .logo, .j-message .j-lead .j-width-down .j-width-left .logo, .j-lead .j-message .j-me-main-down .j-width-left .logo, .j-message .j-lead .j-me-main-down .j-width-left .logo {
@@ -140,10 +153,24 @@ a {
   margin: 0 0 5.7rem;
 }
 
+@media screen and (max-width: 400px) {
+  .j-lead .j-row .j-width-left .logo, .j-lead .j-message .j-row-middle .j-width-left .logo, .j-message .j-lead .j-row-middle .j-width-left .logo, .j-lead .j-message .j-width-down .j-width-left .logo, .j-message .j-lead .j-width-down .j-width-left .logo, .j-lead .j-message .j-me-main-down .j-width-left .logo, .j-message .j-lead .j-me-main-down .j-width-left .logo {
+    width: 10rem;
+    margin: 2rem 0 3rem 2rem;
+  }
+}
+
 .j-lead .j-row .j-width-left h3, .j-lead .j-message .j-row-middle .j-width-left h3, .j-message .j-lead .j-row-middle .j-width-left h3, .j-lead .j-message .j-width-down .j-width-left h3, .j-message .j-lead .j-width-down .j-width-left h3, .j-lead .j-message .j-me-main-down .j-width-left h3, .j-message .j-lead .j-me-main-down .j-width-left h3 {
   font-size: 2rem;
   font-weight: 400;
   margin: 1rem 0 2rem;
+}
+
+@media screen and (max-width: 400px) {
+  .j-lead .j-row .j-width-left h3, .j-lead .j-message .j-row-middle .j-width-left h3, .j-message .j-lead .j-row-middle .j-width-left h3, .j-lead .j-message .j-width-down .j-width-left h3, .j-message .j-lead .j-width-down .j-width-left h3, .j-lead .j-message .j-me-main-down .j-width-left h3, .j-message .j-lead .j-me-main-down .j-width-left h3 {
+    float: right;
+    margin: 8.6rem 3rem 0 0;
+  }
 }
 
 .j-lead .j-row .j-width-left h1, .j-lead .j-message .j-row-middle .j-width-left h1, .j-message .j-lead .j-row-middle .j-width-left h1, .j-lead .j-message .j-width-down .j-width-left h1, .j-message .j-lead .j-width-down .j-width-left h1, .j-lead .j-message .j-me-main-down .j-width-left h1, .j-message .j-lead .j-me-main-down .j-width-left h1 {
@@ -151,6 +178,17 @@ a {
   font-weight: 300;
   margin: 0 0 3rem;
   line-height: 1.5;
+}
+
+@media screen and (max-width: 400px) {
+  .j-lead .j-row .j-width-left h1, .j-lead .j-message .j-row-middle .j-width-left h1, .j-message .j-lead .j-row-middle .j-width-left h1, .j-lead .j-message .j-width-down .j-width-left h1, .j-message .j-lead .j-width-down .j-width-left h1, .j-lead .j-message .j-me-main-down .j-width-left h1, .j-message .j-lead .j-me-main-down .j-width-left h1 {
+    font-size: 2.8rem;
+    font-weight: 300;
+    margin: 2.5rem auto 1rem;
+    display: -ms-grid;
+    display: grid;
+    place-items: center;
+  }
 }
 
 .j-lead .j-row .j-width-left .bus, .j-lead .j-message .j-row-middle .j-width-left .bus, .j-message .j-lead .j-row-middle .j-width-left .bus, .j-lead .j-message .j-width-down .j-width-left .bus, .j-message .j-lead .j-width-down .j-width-left .bus, .j-lead .j-message .j-me-main-down .j-width-left .bus, .j-message .j-lead .j-me-main-down .j-width-left .bus {
@@ -170,10 +208,32 @@ a {
   width: 100%;
 }
 
+@media screen and (max-width: 400px) {
+  .j-lead .j-row .j-width-left .bus, .j-lead .j-message .j-row-middle .j-width-left .bus, .j-message .j-lead .j-row-middle .j-width-left .bus, .j-lead .j-message .j-width-down .j-width-left .bus, .j-message .j-lead .j-width-down .j-width-left .bus, .j-lead .j-message .j-me-main-down .j-width-left .bus, .j-message .j-lead .j-me-main-down .j-width-left .bus {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 26rem;
+    margin: 1.5rem auto 0;
+  }
+}
+
 .j-lead .j-row .j-width-left .bus p, .j-lead .j-message .j-row-middle .j-width-left .bus p, .j-message .j-lead .j-row-middle .j-width-left .bus p, .j-lead .j-message .j-width-down .j-width-left .bus p, .j-message .j-lead .j-width-down .j-width-left .bus p, .j-lead .j-message .j-me-main-down .j-width-left .bus p, .j-message .j-lead .j-me-main-down .j-width-left .bus p {
   padding: 1.8rem 0 0;
   border-top: 1px solid #030508;
   width: 100%;
+}
+
+@media screen and (max-width: 400px) {
+  .j-lead .j-row .j-width-left .bus p, .j-lead .j-message .j-row-middle .j-width-left .bus p, .j-message .j-lead .j-row-middle .j-width-left .bus p, .j-lead .j-message .j-width-down .j-width-left .bus p, .j-message .j-lead .j-width-down .j-width-left .bus p, .j-lead .j-message .j-me-main-down .j-width-left .bus p, .j-message .j-lead .j-me-main-down .j-width-left .bus p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    padding: 3rem 0 0;
+    text-align: center;
+  }
 }
 
 .j-lead .j-row .j-width-left .bus img, .j-lead .j-message .j-row-middle .j-width-left .bus img, .j-message .j-lead .j-row-middle .j-width-left .bus img, .j-lead .j-message .j-width-down .j-width-left .bus img, .j-message .j-lead .j-width-down .j-width-left .bus img, .j-lead .j-message .j-me-main-down .j-width-left .bus img, .j-message .j-lead .j-me-main-down .j-width-left .bus img {
@@ -185,10 +245,27 @@ a {
   width: 18rem;
 }
 
+@media screen and (max-width: 400px) {
+  .j-lead .j-row .j-width-left .bus img, .j-lead .j-message .j-row-middle .j-width-left .bus img, .j-message .j-lead .j-row-middle .j-width-left .bus img, .j-lead .j-message .j-width-down .j-width-left .bus img, .j-message .j-lead .j-width-down .j-width-left .bus img, .j-lead .j-message .j-me-main-down .j-width-left .bus img, .j-message .j-lead .j-me-main-down .j-width-left .bus img {
+    width: 12.5rem;
+    position: absolute;
+    top: none;
+    right: none;
+    bottom: 3rem;
+    left: 15rem;
+  }
+}
+
 .j-lead .j-row .j-width-left .bus span, .j-lead .j-message .j-row-middle .j-width-left .bus span, .j-message .j-lead .j-row-middle .j-width-left .bus span, .j-lead .j-message .j-width-down .j-width-left .bus span, .j-message .j-lead .j-width-down .j-width-left .bus span, .j-lead .j-message .j-me-main-down .j-width-left .bus span, .j-message .j-lead .j-me-main-down .j-width-left .bus span {
   width: 20%;
   display: block;
   border-top: 1px solid #030508;
+}
+
+@media screen and (max-width: 400px) {
+  .j-lead .j-row .j-width-left .bus span, .j-lead .j-message .j-row-middle .j-width-left .bus span, .j-message .j-lead .j-row-middle .j-width-left .bus span, .j-lead .j-message .j-width-down .j-width-left .bus span, .j-message .j-lead .j-width-down .j-width-left .bus span, .j-lead .j-message .j-me-main-down .j-width-left .bus span, .j-message .j-lead .j-me-main-down .j-width-left .bus span {
+    display: none;
+  }
 }
 
 .j-lead .j-row .j-width-left .j-btn, .j-lead .j-message .j-row-middle .j-width-left .j-btn, .j-message .j-lead .j-row-middle .j-width-left .j-btn, .j-lead .j-message .j-width-down .j-width-left .j-btn, .j-message .j-lead .j-width-down .j-width-left .j-btn, .j-lead .j-message .j-me-main-down .j-width-left .j-btn, .j-message .j-lead .j-me-main-down .j-width-left .j-btn {
@@ -209,6 +286,26 @@ a {
   bottom: 5rem;
 }
 
+@media screen and (max-width: 400px) {
+  .j-lead .j-row .j-width-left .j-btn, .j-lead .j-message .j-row-middle .j-width-left .j-btn, .j-message .j-lead .j-row-middle .j-width-left .j-btn, .j-lead .j-message .j-width-down .j-width-left .j-btn, .j-message .j-lead .j-width-down .j-width-left .j-btn, .j-lead .j-message .j-me-main-down .j-width-left .j-btn, .j-message .j-lead .j-me-main-down .j-width-left .j-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 100%;
+    bottom: 2.5rem;
+  }
+}
+
 .j-lead .j-row .j-width-left .j-btn p, .j-lead .j-message .j-row-middle .j-width-left .j-btn p, .j-message .j-lead .j-row-middle .j-width-left .j-btn p, .j-lead .j-message .j-width-down .j-width-left .j-btn p, .j-message .j-lead .j-width-down .j-width-left .j-btn p, .j-lead .j-message .j-me-main-down .j-width-left .j-btn p, .j-message .j-lead .j-me-main-down .j-width-left .j-btn p {
   font-size: 1.6rem;
   font-weight: 400;
@@ -220,9 +317,26 @@ a {
   text-align: center;
 }
 
+@media screen and (max-width: 400px) {
+  .j-lead .j-row .j-width-left .j-btn p, .j-lead .j-message .j-row-middle .j-width-left .j-btn p, .j-message .j-lead .j-row-middle .j-width-left .j-btn p, .j-lead .j-message .j-width-down .j-width-left .j-btn p, .j-message .j-lead .j-width-down .j-width-left .j-btn p, .j-lead .j-message .j-me-main-down .j-width-left .j-btn p, .j-message .j-lead .j-me-main-down .j-width-left .j-btn p {
+    margin: 0 0.8rem 0;
+    width: 16rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+  }
+}
+
 .j-lead .j-row .j-width-right, .j-lead .j-message .j-row-middle .j-width-right, .j-message .j-lead .j-row-middle .j-width-right, .j-lead .j-message .j-width-down .j-width-right, .j-message .j-lead .j-width-down .j-width-right, .j-lead .j-message .j-me-main-down .j-width-right, .j-message .j-lead .j-me-main-down .j-width-right {
   width: 63%;
   height: 53rem;
+}
+
+@media screen and (max-width: 400px) {
+  .j-lead .j-row .j-width-right, .j-lead .j-message .j-row-middle .j-width-right, .j-message .j-lead .j-row-middle .j-width-right, .j-lead .j-message .j-width-down .j-width-right, .j-message .j-lead .j-width-down .j-width-right, .j-lead .j-message .j-me-main-down .j-width-right, .j-message .j-lead .j-me-main-down .j-width-right {
+    width: 100%;
+    height: 24rem;
+  }
 }
 
 .j-lead .j-row .j-width-right img, .j-lead .j-message .j-row-middle .j-width-right img, .j-message .j-lead .j-row-middle .j-width-right img, .j-lead .j-message .j-width-down .j-width-right img, .j-message .j-lead .j-width-down .j-width-right img, .j-lead .j-message .j-me-main-down .j-width-right img, .j-message .j-lead .j-me-main-down .j-width-right img {
@@ -230,6 +344,12 @@ a {
      object-fit: cover;
   width: 100%;
   height: 100vh;
+}
+
+@media screen and (max-width: 400px) {
+  .j-lead .j-row .j-width-right img, .j-lead .j-message .j-row-middle .j-width-right img, .j-message .j-lead .j-row-middle .j-width-right img, .j-lead .j-message .j-width-down .j-width-right img, .j-message .j-lead .j-width-down .j-width-right img, .j-lead .j-message .j-me-main-down .j-width-right img, .j-message .j-lead .j-me-main-down .j-width-right img {
+    height: 100%;
+  }
 }
 
 /* j-message */
@@ -317,11 +437,11 @@ a {
   width: auto;
 }
 
-.j-message .j-width-down .j-width-right {
+.j-message .j-width-down .j-width-right-me {
   width: 34rem;
 }
 
-.j-message .j-width-down .j-width-right img {
+.j-message .j-width-down .j-width-right-me img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
@@ -434,7 +554,7 @@ a {
   font-size: 2rem;
   font-weight: 400;
   text-align: center;
-  margin: 0 1.5rem 0;
+  margin: 0 2rem 0;
   width: 18rem;
   height: 18rem;
   line-height: 18rem;
@@ -486,7 +606,7 @@ a {
       -ms-flex-align: start;
           align-items: flex-start;
   width: 70rem;
-  margin: 0 auto 8rem;
+  margin: 0 auto 10rem;
   position: relative;
   top: 0;
   right: 0;
@@ -701,6 +821,10 @@ a {
   left: 0;
   width: 1.4rem;
   height: 1.4rem;
+}
+
+.j-in-list .j-in-top .op_plus:hover {
+  cursor: pointer;
 }
 
 .j-in-list .j-in-top .op_plus:before,
@@ -992,5 +1116,33 @@ form .btnSu:hover {
 
 form .j-formIn:last-child {
   border: none;
+}
+
+/* footer */
+footer {
+  margin: 5rem auto 16rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+footer div {
+  width: 3.5rem;
+  margin: 0 4rem;
+}
+
+footer div img {
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */

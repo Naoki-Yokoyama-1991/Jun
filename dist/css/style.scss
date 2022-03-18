@@ -5,6 +5,7 @@
 
 /* 変数 */
 $breakPoint-pc: 600px;
+$breakPoint-mobile: 400px;
 $notoSerif: 'Noto Serif JP', serif, 'MS P明朝', 'ヒラギノ明朝';
 
 /* カラー */
@@ -14,7 +15,7 @@ $red: #a52323;
 
 /* 関数 */
 @mixin max-screen($break-point) {
-  @media screen and(min-width:$break-point) {
+  @media screen and(max-width:$break-point) {
     @content;
   }
 }
@@ -90,12 +91,12 @@ $red: #a52323;
 /* アニメーション設定 */
 .scr-target {
   opacity: 0;
-  transform: translate3d(0, 30px, 0);
+  transform: translate3d(0, 50px, 0);
 }
 .scr-target.is-active {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  transition: 1s;
+  transition: 2s;
 }
 
 /* スタイル */
@@ -137,44 +138,96 @@ a {
   .j-row {
     @include flex(flex, space-between, row, flex-start);
 
+    @include max-screen($breakPoint-mobile) {
+      display: block;
+    }
+
     .j-width-left {
       @include widthSize(37%);
       @include margin(3rem 5rem 0 5rem);
+      // smt
+      @include max-screen($breakPoint-mobile) {
+        @include widthSize(100%);
+        @include margin(0);
+      }
 
       .logo {
-        width: 12.6rem;
+        @include widthSize(12.6rem);
         @include heightSize(auto);
         @include margin(0 0 5.7rem);
+        // smt
+        @include max-screen($breakPoint-mobile) {
+          @include widthSize(10rem);
+          @include margin(2rem 0 3rem 2rem);
+        }
       }
 
       h3 {
         @include fz(20, 400);
         @include margin(1rem 0 2rem);
+        // smt
+        @include max-screen($breakPoint-mobile) {
+          float: right;
+          @include margin(8.6rem 3rem 0 0);
+        }
       }
 
       h1 {
         @include fz(34, 300);
         @include margin(0 0 3rem);
         line-height: 1.5;
+
+        // smt
+        @include max-screen($breakPoint-mobile) {
+          @include fz(28, 300);
+          @include margin(2.5rem auto 1rem);
+          display: grid;
+          place-items: center;
+        }
       }
 
       .bus {
         @include flex(flex, flex-start, row, flex-start);
         @include widthSize(100%);
+
+        //smt
+        @include max-screen($breakPoint-mobile) {
+          @include position(relative, 0, 0, 0, 0);
+          @include display(block);
+          @include widthSize(26rem);
+          @include margin(1.5rem auto 0);
+        }
+
         p {
           @include padding(1.8rem 0 0);
           border-top: 1px solid $fontColor;
           @include widthSize(100%);
+          //smt
+          @include max-screen($breakPoint-mobile) {
+            @include fz(14, 300);
+            @include padding(3rem 0 0);
+            text-align: center;
+          }
         }
         img {
           @include position(relative, none, 0, 4rem, 0.5rem);
           @include widthSize(18rem);
+          //smt
+          @include max-screen($breakPoint-mobile) {
+            @include widthSize(12.5rem);
+            @include position(absolute, none, none, 3rem, 15rem);
+          }
         }
 
         span {
           @include widthSize(20%);
           @include display(block);
           border-top: 1px solid $fontColor;
+
+          //smt
+          @include max-screen($breakPoint-mobile) {
+            @include display(none);
+          }
         }
       }
 
@@ -182,6 +235,12 @@ a {
         @include flex(flex, space-between, row, flex-start);
         position: absolute;
         bottom: 5rem;
+        //smt
+        @include max-screen($breakPoint-mobile) {
+          @include flex(flex, center, row, flex-start);
+          @include widthSize(100%);
+          bottom: 2.5rem;
+        }
 
         p {
           @include fz(16, 400);
@@ -191,17 +250,32 @@ a {
           @include widthSize(17.6rem);
           @include radius(3rem);
           text-align: center;
+          //smt
+          @include max-screen($breakPoint-mobile) {
+            @include margin(0 0.8rem 0);
+            @include widthSize(16rem);
+            @include fz(15, 400);
+            text-align: center;
+          }
         }
       }
     }
-
     .j-width-right {
       @include widthSize(63%);
       @include heightSize(53rem);
+      //smt
+      @include max-screen($breakPoint-mobile) {
+        @include widthSize(100%);
+        @include heightSize(24rem);
+      }
       img {
         object-fit: cover;
         @include widthSize(100%);
         @include heightSize(100vh);
+        //smt
+        @include max-screen($breakPoint-mobile) {
+          @include heightSize(100%);
+        }
       }
     }
   }
@@ -261,7 +335,7 @@ a {
       @include widthSize(auto);
     }
 
-    .j-width-right {
+    .j-width-right-me {
       @include widthSize(34rem);
 
       img {
@@ -347,7 +421,7 @@ a {
     p {
       @include fz(20, 400);
       text-align: center;
-      @include margin(0 1.5rem 0);
+      @include margin(0 2rem 0);
       @include widthSize(18rem);
       @include heightSize(18rem);
       line-height: 18rem;
@@ -364,7 +438,6 @@ a {
 }
 
 /* j-flow */
-
 .j-flow {
   @include padding(14rem 0 9rem);
 }
@@ -388,7 +461,7 @@ a {
     @include padding(4rem);
     @include flex(flex, center, row, flex-start);
     @include widthSize(70rem);
-    @include margin(0 auto 8rem);
+    @include margin(0 auto 10rem);
     @include position(relative, 0, 0, 0, 0);
 
     .j-triangle {
@@ -548,6 +621,9 @@ a {
       @include position(relative, 0, 0, 0, 0);
       @include widthSize(1.4rem);
       @include heightSize(1.4rem);
+      &:hover {
+        cursor: pointer;
+      }
     }
     .op_plus:before,
     .op_plus:after {
@@ -769,5 +845,19 @@ form {
 
   .j-formIn:last-child {
     border: none;
+  }
+}
+
+/* footer */
+footer {
+  @include margin(5rem auto 16rem);
+  @include flex(flex, center, row, center);
+  @include widthSize(100%);
+  div {
+    @include widthSize(3.5rem);
+    @include margin(0 4rem);
+    img {
+      @include widthSize(100%);
+    }
   }
 }

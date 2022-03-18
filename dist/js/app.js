@@ -1,4 +1,4 @@
-function jsonOutput() {
+window.addEventListener('load', () => {
   let request = new XMLHttpRequest();
 
   request.open('GET', '../../dist/js/json.json');
@@ -27,25 +27,46 @@ function jsonOutput() {
       }
 
       for (let i = 0; i < json[0].flow.length; i++) {
-        let htmlParts =
-          '<div class="j-fl-list" >' +
-          '<div class="j-triangle"></div>' +
-          '<div class="j-fl-left">' +
-          ' <h3>' +
-          '<span></span>' +
-          json[0].flow[i].title +
-          '<span></span> ' +
-          '</h3>' +
-          '<p>' +
-          json[0].flow[i].text +
-          '</p>' +
-          '</div>' +
-          '<div class="j-fl-right">' +
-          '<img src="' +
-          json[0].flow[i].image +
-          '">' +
-          '</div>' +
-          '</div>';
+        if (json[0].flow[i].title == '火葬場へ') {
+          var htmlParts =
+            '<div class="j-fl-list" >' +
+            '<div class="j-fl-left">' +
+            ' <h3>' +
+            '<span></span>' +
+            json[0].flow[i].title +
+            '<span></span> ' +
+            '</h3>' +
+            '<p>' +
+            json[0].flow[i].text +
+            '</p>' +
+            '</div>' +
+            '<div class="j-fl-right">' +
+            '<img src="' +
+            json[0].flow[i].image +
+            '">' +
+            '</div>' +
+            '</div>';
+        } else {
+          htmlParts =
+            '<div class="j-fl-list" >' +
+            '<div class="j-triangle"></div>' +
+            '<div class="j-fl-left">' +
+            ' <h3>' +
+            '<span></span>' +
+            json[0].flow[i].title +
+            '<span></span> ' +
+            '</h3>' +
+            '<p>' +
+            json[0].flow[i].text +
+            '</p>' +
+            '</div>' +
+            '<div class="j-fl-right">' +
+            '<img src="' +
+            json[0].flow[i].image +
+            '">' +
+            '</div>' +
+            '</div>';
+        }
 
         foHtml += htmlParts;
       }
@@ -101,6 +122,4 @@ function jsonOutput() {
       document.getElementById('inquiry').innerHTML = inHtml;
     }
   };
-}
-
-jsonOutput();
+});

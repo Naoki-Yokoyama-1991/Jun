@@ -18,6 +18,7 @@
         rel: 0, // 関連動画非表示
         showinfo: 1, // 動画情報表示
         controls: 1, // コントローラー表示
+        autoplay: 0,
       },
     });
   }
