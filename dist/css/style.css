@@ -109,7 +109,6 @@ a {
 }
 
 .j-lead {
-  height: 100vh;
   position: relative;
 }
 
@@ -127,9 +126,10 @@ a {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  height: 100vh;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .j-lead .j-row, .j-lead .j-message .j-row-middle, .j-message .j-lead .j-row-middle, .j-lead .j-message .j-width-down, .j-message .j-lead .j-width-down, .j-lead .j-message .j-me-main-down, .j-message .j-lead .j-me-main-down {
     display: block;
   }
@@ -140,7 +140,7 @@ a {
   margin: 3rem 5rem 0 5rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .j-lead .j-row .j-width-left, .j-lead .j-message .j-row-middle .j-width-left, .j-message .j-lead .j-row-middle .j-width-left, .j-lead .j-message .j-width-down .j-width-left, .j-message .j-lead .j-width-down .j-width-left, .j-lead .j-message .j-me-main-down .j-width-left, .j-message .j-lead .j-me-main-down .j-width-left {
     width: 100%;
     margin: 0;
@@ -153,10 +153,10 @@ a {
   margin: 0 0 5.7rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .j-lead .j-row .j-width-left .logo, .j-lead .j-message .j-row-middle .j-width-left .logo, .j-message .j-lead .j-row-middle .j-width-left .logo, .j-lead .j-message .j-width-down .j-width-left .logo, .j-message .j-lead .j-width-down .j-width-left .logo, .j-lead .j-message .j-me-main-down .j-width-left .logo, .j-message .j-lead .j-me-main-down .j-width-left .logo {
     width: 10rem;
-    margin: 2rem 0 3rem 2rem;
+    margin: 2rem 0 4rem 2rem;
   }
 }
 
@@ -166,7 +166,7 @@ a {
   margin: 1rem 0 2rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .j-lead .j-row .j-width-left h3, .j-lead .j-message .j-row-middle .j-width-left h3, .j-message .j-lead .j-row-middle .j-width-left h3, .j-lead .j-message .j-width-down .j-width-left h3, .j-message .j-lead .j-width-down .j-width-left h3, .j-lead .j-message .j-me-main-down .j-width-left h3, .j-message .j-lead .j-me-main-down .j-width-left h3 {
     float: right;
     margin: 8.6rem 3rem 0 0;
@@ -180,11 +180,11 @@ a {
   line-height: 1.5;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .j-lead .j-row .j-width-left h1, .j-lead .j-message .j-row-middle .j-width-left h1, .j-message .j-lead .j-row-middle .j-width-left h1, .j-lead .j-message .j-width-down .j-width-left h1, .j-message .j-lead .j-width-down .j-width-left h1, .j-lead .j-message .j-me-main-down .j-width-left h1, .j-message .j-lead .j-me-main-down .j-width-left h1 {
     font-size: 2.8rem;
     font-weight: 300;
-    margin: 2.5rem auto 1rem;
+    margin: 2.8rem auto 1rem;
     display: -ms-grid;
     display: grid;
     place-items: center;
@@ -208,7 +208,7 @@ a {
   width: 100%;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .j-lead .j-row .j-width-left .bus, .j-lead .j-message .j-row-middle .j-width-left .bus, .j-message .j-lead .j-row-middle .j-width-left .bus, .j-lead .j-message .j-width-down .j-width-left .bus, .j-message .j-lead .j-width-down .j-width-left .bus, .j-lead .j-message .j-me-main-down .j-width-left .bus, .j-message .j-lead .j-me-main-down .j-width-left .bus {
     position: relative;
     top: 0;
@@ -227,7 +227,7 @@ a {
   width: 100%;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .j-lead .j-row .j-width-left .bus p, .j-lead .j-message .j-row-middle .j-width-left .bus p, .j-message .j-lead .j-row-middle .j-width-left .bus p, .j-lead .j-message .j-width-down .j-width-left .bus p, .j-message .j-lead .j-width-down .j-width-left .bus p, .j-lead .j-message .j-me-main-down .j-width-left .bus p, .j-message .j-lead .j-me-main-down .j-width-left .bus p {
     font-size: 1.4rem;
     font-weight: 300;
@@ -245,7 +245,7 @@ a {
   width: 18rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .j-lead .j-row .j-width-left .bus img, .j-lead .j-message .j-row-middle .j-width-left .bus img, .j-message .j-lead .j-row-middle .j-width-left .bus img, .j-lead .j-message .j-width-down .j-width-left .bus img, .j-message .j-lead .j-width-down .j-width-left .bus img, .j-lead .j-message .j-me-main-down .j-width-left .bus img, .j-message .j-lead .j-me-main-down .j-width-left .bus img {
     width: 12.5rem;
     position: absolute;
@@ -262,7 +262,7 @@ a {
   border-top: 1px solid #030508;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .j-lead .j-row .j-width-left .bus span, .j-lead .j-message .j-row-middle .j-width-left .bus span, .j-message .j-lead .j-row-middle .j-width-left .bus span, .j-lead .j-message .j-width-down .j-width-left .bus span, .j-message .j-lead .j-width-down .j-width-left .bus span, .j-lead .j-message .j-me-main-down .j-width-left .bus span, .j-message .j-lead .j-me-main-down .j-width-left .bus span {
     display: none;
   }
@@ -286,7 +286,7 @@ a {
   bottom: 5rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .j-lead .j-row .j-width-left .j-btn, .j-lead .j-message .j-row-middle .j-width-left .j-btn, .j-message .j-lead .j-row-middle .j-width-left .j-btn, .j-lead .j-message .j-width-down .j-width-left .j-btn, .j-message .j-lead .j-width-down .j-width-left .j-btn, .j-lead .j-message .j-me-main-down .j-width-left .j-btn, .j-message .j-lead .j-me-main-down .j-width-left .j-btn {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -302,7 +302,7 @@ a {
         -ms-flex-align: start;
             align-items: flex-start;
     width: 100%;
-    bottom: 2.5rem;
+    bottom: 3rem;
   }
 }
 
@@ -317,25 +317,15 @@ a {
   text-align: center;
 }
 
-@media screen and (max-width: 400px) {
-  .j-lead .j-row .j-width-left .j-btn p, .j-lead .j-message .j-row-middle .j-width-left .j-btn p, .j-message .j-lead .j-row-middle .j-width-left .j-btn p, .j-lead .j-message .j-width-down .j-width-left .j-btn p, .j-message .j-lead .j-width-down .j-width-left .j-btn p, .j-lead .j-message .j-me-main-down .j-width-left .j-btn p, .j-message .j-lead .j-me-main-down .j-width-left .j-btn p {
-    margin: 0 0.8rem 0;
-    width: 16rem;
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-align: center;
-  }
-}
-
 .j-lead .j-row .j-width-right, .j-lead .j-message .j-row-middle .j-width-right, .j-message .j-lead .j-row-middle .j-width-right, .j-lead .j-message .j-width-down .j-width-right, .j-message .j-lead .j-width-down .j-width-right, .j-lead .j-message .j-me-main-down .j-width-right, .j-message .j-lead .j-me-main-down .j-width-right {
   width: 63%;
   height: 53rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .j-lead .j-row .j-width-right, .j-lead .j-message .j-row-middle .j-width-right, .j-message .j-lead .j-row-middle .j-width-right, .j-lead .j-message .j-width-down .j-width-right, .j-message .j-lead .j-width-down .j-width-right, .j-lead .j-message .j-me-main-down .j-width-right, .j-message .j-lead .j-me-main-down .j-width-right {
     width: 100%;
-    height: 24rem;
+    height: 28rem;
   }
 }
 
@@ -346,9 +336,29 @@ a {
   height: 100vh;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 500px) {
   .j-lead .j-row .j-width-right img, .j-lead .j-message .j-row-middle .j-width-right img, .j-message .j-lead .j-row-middle .j-width-right img, .j-lead .j-message .j-width-down .j-width-right img, .j-message .j-lead .j-width-down .j-width-right img, .j-lead .j-message .j-me-main-down .j-width-right img, .j-message .j-lead .j-me-main-down .j-width-right img {
     height: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .j-lead .j-btn {
+    width: 100%;
+    margin: 4rem auto 8rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .j-lead .j-btn p {
+    border: 1px solid #030508;
+    border-radius: 3rem;
+    padding: 1.5rem 0 1.6rem;
+    margin: 0 auto 2.3rem;
+    width: 21rem;
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-align: center;
   }
 }
 
@@ -370,9 +380,24 @@ a {
   margin: 8rem 0 0;
 }
 
+@media screen and (max-width: 500px) {
+  .j-message .j-row, .j-message .j-row-middle, .j-message .j-width-down, .j-message .j-me-main-down {
+    display: block;
+    margin: 6rem 0 0;
+  }
+}
+
 .j-message .j-row .j-width-left, .j-message .j-row-middle .j-width-left, .j-message .j-width-down .j-width-left, .j-message .j-me-main-down .j-width-left {
   width: 63rem;
   margin: 0 7rem 0 0;
+}
+
+@media screen and (max-width: 500px) {
+  .j-message .j-row .j-width-left, .j-message .j-row-middle .j-width-left, .j-message .j-width-down .j-width-left, .j-message .j-me-main-down .j-width-left {
+    width: 100%;
+    height: 20rem;
+    margin: 0 auto 5rem;
+  }
 }
 
 .j-message .j-row .j-width-left img, .j-message .j-row-middle .j-width-left img, .j-message .j-width-down .j-width-left img, .j-message .j-me-main-down .j-width-left img {
@@ -392,6 +417,16 @@ a {
   letter-spacing: 0.4rem;
 }
 
+@media screen and (max-width: 500px) {
+  .j-message .j-row p, .j-message .j-row-middle p, .j-message .j-width-down p, .j-message .j-me-main-down p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 2.5;
+    letter-spacing: 0.1rem;
+    margin: 0 auto;
+  }
+}
+
 .j-message .j-row-middle {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -408,8 +443,22 @@ a {
           align-items: center;
 }
 
+@media screen and (max-width: 500px) {
+  .j-message .j-row-middle {
+    display: block;
+  }
+}
+
 .j-message .j-row-middle .j-width-left {
   width: 43rem;
+}
+
+@media screen and (max-width: 500px) {
+  .j-message .j-row-middle .j-width-left {
+    width: 100%;
+    height: 20rem;
+    margin: 0 auto 5rem;
+  }
 }
 
 .j-message .j-me-right, .j-message .j-me-left {
@@ -420,6 +469,19 @@ a {
   left: 0;
   width: 25rem;
   margin: 0 10rem 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+  .j-message .j-me-right, .j-message .j-me-left {
+    position: relative;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20rem;
+    margin: 5rem auto;
+  }
 }
 
 .j-message .j-me-right img, .j-message .j-me-left img {
@@ -437,8 +499,23 @@ a {
   width: auto;
 }
 
+@media screen and (max-width: 500px) {
+  .j-message .j-width-down .j-width-left {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
 .j-message .j-width-down .j-width-right-me {
   width: 34rem;
+}
+
+@media screen and (max-width: 500px) {
+  .j-message .j-width-down .j-width-right-me {
+    width: 100%;
+    height: 20rem;
+    margin: 0 auto 0;
+  }
 }
 
 .j-message .j-width-down .j-width-right-me img {
@@ -453,6 +530,13 @@ a {
   margin: 8rem auto 0;
 }
 
+@media screen and (max-width: 500px) {
+  .j-message .j-me-main {
+    width: 8rem;
+    margin: 7rem auto 6rem;
+  }
+}
+
 .j-message .j-me-main img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -460,8 +544,22 @@ a {
   height: 100%;
 }
 
+@media screen and (max-width: 500px) {
+  .j-message .j-me-main-down {
+    margin: 0 auto 5rem;
+  }
+}
+
 .j-message .j-me-main-down .j-width-left {
   width: 30rem;
+}
+
+@media screen and (max-width: 500px) {
+  .j-message .j-me-main-down .j-width-left {
+    width: 100%;
+    height: 42rem;
+    margin: 0 auto 5rem;
+  }
 }
 
 .j-message .j-me-left {
@@ -472,6 +570,14 @@ a {
   left: 0;
   width: 22rem;
   margin: 0 0 0 8rem;
+}
+
+@media screen and (max-width: 500px) {
+  .j-message .j-me-left {
+    width: 100%;
+    height: 20rem;
+    margin: 0 auto 5rem;
+  }
 }
 
 .j-message .j-me-btn {
@@ -488,7 +594,14 @@ a {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  margin: 4rem 0 16rem;
+  margin: 10rem 0 10rem;
+}
+
+@media screen and (max-width: 500px) {
+  .j-message .j-me-btn {
+    display: block;
+    margin: 8rem 0 8rem;
+  }
 }
 
 .j-message .j-me-btn p {
@@ -502,10 +615,25 @@ a {
   text-align: center;
 }
 
+@media screen and (max-width: 500px) {
+  .j-message .j-me-btn p {
+    border: 1px solid #030508;
+    padding: 1.5rem 0 1.6rem;
+    margin: 0 auto 2.3rem;
+    width: 21rem;
+  }
+}
+
 /* j-concept */
 .j-concept {
   background-color: #fdf1ec;
-  padding: 16rem 0 16rem 0;
+  padding: 16rem 0;
+}
+
+@media screen and (max-width: 500px) {
+  .j-concept {
+    padding: 8rem 0;
+  }
 }
 
 .j-concept #concept {
@@ -518,6 +646,13 @@ a {
   margin: 0 auto 3.5rem;
 }
 
+@media screen and (max-width: 500px) {
+  .j-concept #concept .j-co-list {
+    width: 90%;
+    margin: 0 auto 2.5rem;
+  }
+}
+
 .j-concept #concept .j-co-list h3 {
   font-size: 1.8rem;
   font-weight: 400;
@@ -527,10 +662,37 @@ a {
   background-color: #fff;
 }
 
+@media screen and (max-width: 500px) {
+  .j-concept #concept .j-co-list h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    height: 5.5rem;
+    line-height: 5.5rem;
+  }
+  .j-concept #concept .j-co-list h3:last-child {
+    letter-spacing: -0.05rem;
+  }
+}
+
 .j-concept #concept p {
   letter-spacing: 0.08rem;
   line-height: 2;
   margin: 0 0 8rem 0;
+}
+
+@media screen and (max-width: 500px) {
+  .j-concept #concept p {
+    width: 90%;
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-align: left;
+    line-height: 2;
+    letter-spacing: 0.1rem;
+    margin: 0 auto 5rem;
+  }
+  .j-concept #concept p br {
+    display: none;
+  }
 }
 
 .j-concept .j-co-three {
@@ -550,6 +712,13 @@ a {
   margin: 10rem 0 8rem 0;
 }
 
+@media screen and (max-width: 500px) {
+  .j-concept .j-co-three {
+    display: block;
+    margin: 6rem auto 4rem;
+  }
+}
+
 .j-concept .j-co-three p {
   font-size: 2rem;
   font-weight: 400;
@@ -562,6 +731,18 @@ a {
   border-radius: 50%;
 }
 
+@media screen and (max-width: 500px) {
+  .j-concept .j-co-three p {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin: 0 auto 2.5rem;
+    width: 90%;
+    height: 7rem;
+    line-height: 7rem;
+    border-radius: 0;
+  }
+}
+
 .j-concept .j-co-down {
   font-size: 2.2rem;
   font-weight: 400;
@@ -569,9 +750,23 @@ a {
   letter-spacing: 0.3rem;
 }
 
+@media screen and (max-width: 500px) {
+  .j-concept .j-co-down {
+    font-size: 1.6rem;
+    font-weight: 300;
+    letter-spacing: 0rem;
+  }
+}
+
 /* j-flow */
 .j-flow {
   padding: 14rem 0 9rem;
+}
+
+@media screen and (max-width: 500px) {
+  .j-flow {
+    padding: 8rem 0 2rem;
+  }
 }
 
 .j-flow-title, .j-voice-title, .j-inquiry-title, .j-recommend-title, .j-form-title {
@@ -580,6 +775,14 @@ a {
   text-align: center;
   margin: 0 0 6rem;
   letter-spacing: 0.1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .j-flow-title, .j-voice-title, .j-inquiry-title, .j-recommend-title, .j-form-title {
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 0 0 5rem;
+  }
 }
 
 .j-flow-title span, .j-voice-title span, .j-inquiry-title span, .j-recommend-title span, .j-form-title span {
@@ -614,6 +817,15 @@ a {
   left: 0;
 }
 
+@media screen and (max-width: 500px) {
+  #flow .j-fl-list {
+    display: block;
+    width: 90%;
+    padding: 2rem;
+    margin: 0 auto 6rem;
+  }
+}
+
 #flow .j-fl-list .j-triangle {
   position: absolute;
   top: none;
@@ -625,9 +837,29 @@ a {
   border-left: 4rem solid transparent;
 }
 
+@media screen and (max-width: 500px) {
+  #flow .j-fl-list .j-triangle {
+    position: absolute;
+    bottom: -2.5rem;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
+    -ms-transform: translate(-50%);
+    border-top: 4rem solid #f5f5f5;
+    border-right: 4rem solid transparent;
+    border-left: 4rem solid transparent;
+  }
+}
+
 #flow .j-fl-list .j-fl-left {
   width: 32rem;
   margin: 0 2.7rem 0 0;
+}
+
+@media screen and (max-width: 500px) {
+  #flow .j-fl-list .j-fl-left {
+    width: 100%;
+  }
 }
 
 #flow .j-fl-list .j-fl-left h3 {
@@ -643,6 +875,14 @@ a {
   font-weight: 400;
   border: 1px solid #030508;
   margin: 0 0 1.8rem;
+}
+
+@media screen and (max-width: 500px) {
+  #flow .j-fl-list .j-fl-left h3 {
+    padding: 1.6rem 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
 }
 
 #flow .j-fl-list .j-fl-left h3 span:first-child {
@@ -671,8 +911,23 @@ a {
   line-height: 1.8;
 }
 
+@media screen and (max-width: 500px) {
+  #flow .j-fl-list .j-fl-left p {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+}
+
 #flow .j-fl-list .j-fl-right {
   width: 24rem;
+}
+
+@media screen and (max-width: 500px) {
+  #flow .j-fl-list .j-fl-right {
+    margin: 2rem 0 0;
+    width: 100%;
+    height: 14rem;
+  }
 }
 
 #flow .j-fl-list .j-fl-right img {
@@ -687,8 +942,20 @@ a {
   padding: 0 0 6rem;
 }
 
+@media screen and (max-width: 500px) {
+  .j-voice {
+    padding: 0 0 7rem;
+  }
+}
+
 .j-voice-title {
   margin: 0 0 8rem;
+}
+
+@media screen and (max-width: 500px) {
+  .j-voice-title {
+    margin: 0 0 5rem;
+  }
 }
 
 .j-vo-list {
@@ -708,9 +975,23 @@ a {
   margin: 0 auto 10rem;
 }
 
+@media screen and (max-width: 500px) {
+  .j-vo-list {
+    display: block;
+    margin: 0 auto 5rem;
+  }
+}
+
 .j-vo-list .j-vo-left {
   width: 39rem;
   margin: 0 5.7rem 0 0;
+}
+
+@media screen and (max-width: 500px) {
+  .j-vo-list .j-vo-left {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
 .j-vo-list .j-vo-left .j-vo-item {
@@ -733,6 +1014,14 @@ a {
   letter-spacing: 0.1rem;
 }
 
+@media screen and (max-width: 500px) {
+  .j-vo-list .j-vo-left h3 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+}
+
 .j-vo-list .j-vo-left h3 span {
   font-size: 2rem;
   font-weight: 400;
@@ -743,12 +1032,37 @@ a {
   display: inline-block;
 }
 
+@media screen and (max-width: 500px) {
+  .j-vo-list .j-vo-left h3 span {
+    font-size: 1.8rem;
+    font-weight: 400;
+  }
+}
+
 .j-vo-list .j-vo-left p {
   line-height: 2;
 }
 
+@media screen and (max-width: 500px) {
+  .j-vo-list .j-vo-left p {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  .j-vo-list .j-vo-left p br {
+    display: none;
+  }
+}
+
 .j-vo-list .j-vo-right {
   width: 41rem;
+}
+
+@media screen and (max-width: 500px) {
+  .j-vo-list .j-vo-right {
+    margin: 2.5rem auto 0;
+    width: 90%;
+    height: 20rem;
+  }
 }
 
 .j-vo-list .j-vo-right img {
@@ -763,9 +1077,22 @@ a {
   margin: 0 0 16rem;
 }
 
+@media screen and (max-width: 500px) {
+  .j-youtube {
+    margin: 0 0 12rem;
+  }
+}
+
 .j-youtube #player {
   display: block;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+  .j-youtube #player {
+    width: 90%;
+    height: 22rem;
+  }
 }
 
 /* j-inquiry */
@@ -773,13 +1100,32 @@ a {
   margin: 0 auto 16rem;
 }
 
+@media screen and (max-width: 500px) {
+  .j-inquiry {
+    margin: 0 auto 8rem;
+  }
+}
+
 .j-inquiry-title {
   margin: 0 0 8rem;
+}
+
+@media screen and (max-width: 500px) {
+  .j-inquiry-title {
+    margin: 0 0 6rem;
+  }
 }
 
 .j-in-list {
   width: 60rem;
   margin: 0 auto 7rem;
+}
+
+@media screen and (max-width: 500px) {
+  .j-in-list {
+    width: 90%;
+    margin: 0 auto 3rem;
+  }
 }
 
 .j-in-list .j-in-top {
@@ -801,15 +1147,45 @@ a {
           align-items: flex-start;
 }
 
+@media screen and (max-width: 500px) {
+  .j-in-list .j-in-top {
+    border: none;
+    padding: 2.5rem;
+    border-radius: 0rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .j-in-list .j-in-top {
+    border: none;
+    background-color: #f5f5f5;
+  }
+}
+
 .j-in-list .j-in-top .inquiry-text {
   font-size: 1.8rem;
   font-weight: 400;
+}
+
+@media screen and (max-width: 500px) {
+  .j-in-list .j-in-top .inquiry-text {
+    line-height: 1.6;
+    margin: 0 2rem 0 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
 }
 
 .j-in-list .j-in-top .inquiry-text span {
   letter-spacing: 0.1rem;
   font-size: 2rem;
   font-weight: 300;
+}
+
+@media screen and (max-width: 500px) {
+  .j-in-list .j-in-top .inquiry-text span {
+    display: none;
+  }
 }
 
 .j-in-list .j-in-top .op_plus {
@@ -833,7 +1209,7 @@ a {
   content: '';
   background-color: #030508;
   position: absolute;
-  top: 0.7rem;
+  top: 1.2rem;
   right: 0;
   bottom: 0;
   left: 0;
@@ -844,8 +1220,14 @@ a {
 .j-in-list .j-in-top .plus:before {
   width: 0.1rem;
   height: 1.4rem;
-  top: 0;
+  top: 5px;
   left: 7px;
+}
+
+@media screen and (max-width: 500px) {
+  .j-in-list .j-in-top .plus:before {
+    top: 0.5rem;
+  }
 }
 
 .j-in-list .j-answer.j-anDis {
@@ -857,11 +1239,26 @@ a {
   border-radius: 0 0 1.5rem 1.5rem;
   padding: 2rem 3rem 2.5rem;
   line-height: 2;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+@media screen and (max-width: 500px) {
+  .j-in-list .j-answer .answer-text {
+    line-height: 1.6;
+    padding: 2.5rem;
+  }
 }
 
 /* j-recommend */
 .j-recommend {
   margin: 0 auto 16rem;
+}
+
+@media screen and (max-width: 500px) {
+  .j-recommend {
+    margin: 0 auto 8rem;
+  }
 }
 
 .j-recommend-title {
@@ -888,13 +1285,47 @@ a {
   padding: 7rem 0;
 }
 
+@media screen and (max-width: 500px) {
+  #recommend {
+    display: block;
+    padding: 6rem 0 3.5rem;
+  }
+}
+
 #recommend .j-re-item {
-  margin: 0 4rem;
+  margin: 0 0 2.5rem;
+}
+
+@media screen and (max-width: 500px) {
+  #recommend .j-re-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    width: 90%;
+    margin: 0 auto 2rem;
+  }
 }
 
 #recommend .j-re-item .j-re-image {
   width: 6rem;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+  #recommend .j-re-item .j-re-image {
+    width: 5.5rem;
+    margin: 0 1.5rem 0 0;
+  }
 }
 
 #recommend .j-re-item .j-re-image img {
@@ -911,14 +1342,36 @@ a {
   font-weight: 300;
 }
 
+@media screen and (max-width: 500px) {
+  #recommend .j-re-item p {
+    text-align: left;
+    line-height: 1.8;
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: -0.05rem;
+  }
+}
+
 /* j-form */
 .j-form {
   padding: 0 0 10rem;
   border-bottom: 1px solid #f5f5f5;
 }
 
+@media screen and (max-width: 500px) {
+  .j-form {
+    padding: 0 0 6rem;
+  }
+}
+
 .j-form-title {
   margin: 0 0 8rem;
+}
+
+@media screen and (max-width: 500px) {
+  .j-form-title {
+    margin: 0 0 6rem;
+  }
 }
 
 .j-fo-top {
@@ -954,6 +1407,16 @@ a {
   cursor: pointer;
 }
 
+@media screen and (max-width: 500px) {
+  .j-fo-top button {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin: 0 2rem 7rem;
+    padding: 0 0 2.5rem 0;
+    width: 11rem;
+  }
+}
+
 .j-fo-top .j-bu-success {
   border-bottom: 3px solid #030508;
   color: #030508;
@@ -964,10 +1427,24 @@ form {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 500px) {
+  form {
+    width: 90%;
+  }
+}
+
 form .j-formIn {
   padding: 0 0 4rem 0;
   border-bottom: 1px solid #f5f5f5;
   margin: 0 0 4rem 0;
+}
+
+@media screen and (max-width: 500px) {
+  form .j-formIn {
+    border: none;
+    padding: 0;
+    margin: 0 0 3rem 0;
+  }
 }
 
 form .j-formIn .j-inner {
@@ -986,6 +1463,12 @@ form .j-formIn .j-inner {
           align-items: center;
 }
 
+@media screen and (max-width: 500px) {
+  form .j-formIn .j-inner {
+    display: block;
+  }
+}
+
 form .j-formIn .errorMe {
   margin: 3rem 0 0 25rem;
   color: #a52323;
@@ -995,6 +1478,15 @@ form .j-formIn label {
   font-size: 1.6rem;
   font-weight: 300;
   width: 14rem;
+}
+
+@media screen and (max-width: 500px) {
+  form .j-formIn label {
+    font-size: 1.5rem;
+    font-weight: 300;
+    width: 100%;
+    margin: 0 0 2rem;
+  }
 }
 
 form .j-formIn span {
@@ -1008,6 +1500,18 @@ form .j-formIn span {
   text-align: center;
 }
 
+@media screen and (max-width: 500px) {
+  form .j-formIn span {
+    width: 100%;
+    padding: 0 1.5rem 0;
+    margin: 0 0 0 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    border: none;
+    border-left: 1px solid #a52323;
+  }
+}
+
 form .j-formIn input, form .j-formIn textarea {
   outline: none;
   height: 6rem;
@@ -1018,6 +1522,13 @@ form .j-formIn input, form .j-formIn textarea {
   border: none;
   font-size: 1.5rem;
   font-weight: 300;
+}
+
+@media screen and (max-width: 500px) {
+  form .j-formIn input, form .j-formIn textarea {
+    width: 100%;
+    margin: 1.8rem 0 0;
+  }
 }
 
 form .j-formIn input:-webkit-autofill, form .j-formIn textarea:-webkit-autofill {
@@ -1055,6 +1566,14 @@ form #send {
   margin: 0 0 4rem 0;
 }
 
+@media screen and (max-width: 500px) {
+  form #send {
+    border: none;
+    padding: 0 0 2rem 0;
+    margin: 0 0 2rem 0;
+  }
+}
+
 form #send label {
   font-size: 1.6rem;
   font-weight: 300;
@@ -1083,6 +1602,16 @@ form #send .j-label:hover {
   cursor: pointer;
 }
 
+@media screen and (max-width: 500px) {
+  form #send .j-label {
+    width: 100%;
+    margin: 1.8rem auto 1.2rem;
+  }
+  form #send .j-label:last-child {
+    margin: 1.2rem auto 0;
+  }
+}
+
 form #send .j-la-active {
   border: 1px solid #030508;
   background-color: #fff;
@@ -1098,6 +1627,14 @@ form button {
   font-family: "Noto Serif JP", serif, "MS P明朝", "ヒラギノ明朝";
   line-height: 7rem;
   border: none;
+}
+
+@media screen and (max-width: 500px) {
+  form button {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin: 2rem auto 0;
+  }
 }
 
 form .btnEr {
@@ -1137,9 +1674,22 @@ footer {
   width: 100%;
 }
 
+@media screen and (max-width: 500px) {
+  footer {
+    margin: 5rem auto;
+  }
+}
+
 footer div {
   width: 3.5rem;
   margin: 0 4rem;
+}
+
+@media screen and (max-width: 500px) {
+  footer div {
+    width: 3rem;
+    margin: 0 3rem;
+  }
 }
 
 footer div img {
