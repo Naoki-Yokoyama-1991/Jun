@@ -28,6 +28,9 @@
   <!-- css -->
   <link rel="stylesheet" href="css/style.css" />
 
+  <!-- js -->
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
+
 
 </head>
 
@@ -35,7 +38,10 @@
   <div class="j-wrapper">
     <!----- main ----->
     <main id="main">
-
+      <!----- j-load ----->
+      <div id="loading">
+        <div id="loading-main"></div>
+      </div>
       <!----- j-lead ----->
       <section class="j-lead">
         <div class="j-row">
@@ -271,7 +277,7 @@
           </div>
           <div class="j-formIn">
             <div class="j-inner">
-              <button id="btn">メールを送信</button>
+              <button id="foBtn">メールを送信</button>
             </div>
           </div>
         </form>
@@ -304,6 +310,7 @@
   <script defer type="text/javascript" src="./js/query.js"></script>
   <script defer type="text/javascript" src="./js/animation.js"></script>
   <script defer type="text/javascript" src="./js/matchMedia.js"></script>
+  <script defer type="text/javascript" src="./js/onLoad.js"></script>
 </body>
 
 </html>

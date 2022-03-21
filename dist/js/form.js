@@ -41,7 +41,7 @@ window.addEventListener(
     postalCode.value.replace(/[━.*‐.*―.*－.*\-.*ー.*\-]/gi, '');
 
     //button
-    var btn = doc.getElementById('btn');
+    var btn = doc.getElementById('foBtn');
 
     //初期状態
     btn.disabled = true;

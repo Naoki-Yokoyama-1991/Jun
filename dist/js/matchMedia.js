@@ -1,5 +1,5 @@
 window.addEventListener('load', () => {
-  if (window.matchMedia('(max-width: 400px)').matches) {
+  if (window.matchMedia('(max-width: 500px)').matches) {
     // top image
     let topImage = document.getElementsByClassName('j-width-right');
     topImage[0].remove();
