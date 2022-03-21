@@ -314,16 +314,7 @@ a {
   margin: 0 2rem 0 0;
   width: 17.6rem;
   border-radius: 3rem;
-}
-
-@media screen and (max-width: 500px) {
-  .j-lead .j-row .j-width-left .j-btn p, .j-lead .j-message .j-row-middle .j-width-left .j-btn p, .j-message .j-lead .j-row-middle .j-width-left .j-btn p, .j-lead .j-message .j-width-down .j-width-left .j-btn p, .j-message .j-lead .j-width-down .j-width-left .j-btn p, .j-lead .j-message .j-me-main-down .j-width-left .j-btn p, .j-message .j-lead .j-me-main-down .j-width-left .j-btn p {
-    margin: 0 0.8rem 0;
-    width: 15rem;
-    font-size: 1.5rem;
-    font-weight: 400;
-    text-align: center;
-  }
+  text-align: center;
 }
 
 .j-lead .j-row .j-width-right, .j-lead .j-message .j-row-middle .j-width-right, .j-message .j-lead .j-row-middle .j-width-right, .j-lead .j-message .j-width-down .j-width-right, .j-message .j-lead .j-width-down .j-width-right, .j-lead .j-message .j-me-main-down .j-width-right, .j-message .j-lead .j-me-main-down .j-width-right {
@@ -953,7 +944,7 @@ a {
 
 @media screen and (max-width: 500px) {
   .j-voice {
-    padding: 0 0 3rem;
+    padding: 0 0 7rem;
   }
 }
 
@@ -1088,7 +1079,7 @@ a {
 
 @media screen and (max-width: 500px) {
   .j-youtube {
-    margin: 0 0 8rem;
+    margin: 0 0 12rem;
   }
 }
 
@@ -1218,7 +1209,7 @@ a {
   content: '';
   background-color: #030508;
   position: absolute;
-  top: 1.5rem;
+  top: 1.2rem;
   right: 0;
   bottom: 0;
   left: 0;
@@ -1229,14 +1220,13 @@ a {
 .j-in-list .j-in-top .plus:before {
   width: 0.1rem;
   height: 1.4rem;
-  top: 0;
+  top: 5px;
   left: 7px;
 }
 
 @media screen and (max-width: 500px) {
   .j-in-list .j-in-top .plus:before {
-    top: 0.8rem;
-    left: 7px;
+    top: 0.5rem;
   }
 }
 
@@ -1249,14 +1239,14 @@ a {
   border-radius: 0 0 1.5rem 1.5rem;
   padding: 2rem 3rem 2.5rem;
   line-height: 2;
+  font-size: 1.6rem;
+  font-weight: 400;
 }
 
 @media screen and (max-width: 500px) {
   .j-in-list .j-answer .answer-text {
     line-height: 1.6;
     padding: 2.5rem;
-    font-size: 1.6rem;
-    font-weight: 400;
   }
 }
 
@@ -1453,7 +1443,7 @@ form .j-formIn {
   form .j-formIn {
     border: none;
     padding: 0;
-    margin: 0 0 2rem 0;
+    margin: 0 0 3rem 0;
   }
 }
 
@@ -1697,7 +1687,7 @@ footer div {
 
 @media screen and (max-width: 500px) {
   footer div {
-    width: 3.5rem;
+    width: 3rem;
     margin: 0 3rem;
   }
 }

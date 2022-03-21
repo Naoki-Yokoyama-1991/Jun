@@ -249,13 +249,7 @@ a {
           @include margin(0 2rem 0 0);
           @include widthSize(17.6rem);
           @include radius(3rem);
-          //smt
-          @include max-screen($breakPoint-mobile) {
-            @include margin(0 0.8rem 0);
-            @include widthSize(15rem);
-            @include fz(15, 400);
-            text-align: center;
-          }
+          text-align: center;
         }
       }
     }
@@ -741,7 +735,7 @@ a {
 
   //smt
   @include max-screen($breakPoint-mobile) {
-    @include padding(0 0 3rem);
+    @include padding(0 0 7rem);
   }
 }
 
@@ -848,7 +842,7 @@ a {
 
   //smt
   @include max-screen($breakPoint-mobile) {
-    @include margin(0 0 8rem);
+    @include margin(0 0 12rem);
   }
 
   #player {
@@ -944,19 +938,18 @@ a {
       display: block;
       content: '';
       @include backColor($fontColor);
-      @include position(absolute, 1.5rem, 0, 0, 0);
+      @include position(absolute, 1.2rem, 0, 0, 0);
       @include widthSize(1.4rem);
       @include heightSize(0.1rem);
     }
     .plus:before {
       @include widthSize(0.1rem);
       @include heightSize(1.4rem);
-      top: 0;
+      top: 5px;
       left: 7px;
 
       @include max-screen($breakPoint-mobile) {
-        top: 0.8rem;
-        left: 7px;
+        top: 0.5rem;
       }
     }
   }
@@ -970,11 +963,11 @@ a {
       border-radius: 0 0 1.5rem 1.5rem;
       @include padding(2rem 3rem 2.5rem);
       line-height: 2;
+      @include fz(16, 400);
 
       @include max-screen($breakPoint-mobile) {
         line-height: 1.6;
         @include padding(2.5rem);
-        @include fz(16, 400);
       }
     }
   }
@@ -1114,7 +1107,7 @@ form {
     @include max-screen($breakPoint-mobile) {
       border: none;
       @include padding(0);
-      @include margin(0 0 2rem 0);
+      @include margin(0 0 3rem 0);
     }
 
     .j-inner {
@@ -1297,7 +1290,7 @@ footer {
 
     //smt
     @include max-screen($breakPoint-mobile) {
-      @include widthSize(3.5rem);
+      @include widthSize(3rem);
       @include margin(0 3rem);
     }
 
