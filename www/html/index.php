@@ -1,6 +1,7 @@
 <?php
 //エスケープ処理やデータチェックを行う関数のファイルの読み込み
-require '../html/contact/contact.php';
+require 'contact/contact.php';
+
 ?>
 
 <!DOCTYPE html>
@@ -227,12 +228,12 @@ require '../html/contact/contact.php';
           </button>
         </div>
 
-        <form id="form" method="post" action="index.php">
+        <form id="form" method="post" action="">
 
           <!----- name ----->
-          <div class="j-formIn">
+          <div class=" j-formIn">
             <div class="j-inner">
-              <label>お名前</label><input type="text" name="name" id="name" required value="<?php echo h($name); ?>">
+              <label>お名前</label><input type="text" name="name" id="name" value="<?php echo h($name); ?>">
             </div>
 
             <p id="name-error-message"></p>
@@ -240,7 +241,8 @@ require '../html/contact/contact.php';
           <!----- tel ----->
           <div class="j-formIn">
             <div class="j-inner">
-              <label>お電話番号</label><input type="tel" name="tel" size="17" maxlength="17" id="tel" autocomplete="tel">
+              <label>お電話番号</label><input type="tel" name="tel" size="17" maxlength="17" id="tel" autocomplete="tel"
+                value="<?php echo h($tel); ?>">
             </div>
             <p id="tel-error-message"></p>
           </div>
@@ -255,7 +257,7 @@ require '../html/contact/contact.php';
           <!----- email ----->
           <div class="j-formIn">
             <div class="j-inner">
-              <label>メールアドレス</label><input type="text" name="email" autocomplete="email" id="email" required
+              <label>メールアドレス</label><input type="text" name="email" autocomplete="email" id="email"
                 value="<?php echo h($email); ?>">
             </div>
             <p id="email-error-message"></p>
@@ -278,21 +280,19 @@ require '../html/contact/contact.php';
           <!----- textarea ----->
           <div class="j-formIn">
             <div class="j-inner">
-              <label id="j-text">お問合せ内容</label><textarea name="textarea" id="textarea" rows="6"
+              <label id="j-text">お問合せ内容</label><textarea name="body" id="textarea" rows="6"
                 cols="40"><?php echo h($body); ?></textarea>
             </div>
             <p id="textarea-error-message"></p>
           </div>
           <div class="j-formIn">
             <div class="j-inner">
-              <button id="foBtn">メールを送信</button>
+              <button type="submit" name="submitted" id="foBtn">メールを送信</button>
             </div>
           </div>
         </form>
       </section>
-      <?php
-      echo $_POST["name"];
-      ?>
+
     </main>
     <!----- footer ----->
     <footer>
@@ -317,7 +317,7 @@ require '../html/contact/contact.php';
   <!-- js -->
   <script defer type="text/javascript" src="./js/app.js"></script>
   <script defer type="text/javascript" src="./js/youtube.js"></script>
-  <script defer type="text/javascript" src="./js/form.js"></script>
+  <!-- <script defer type="text/javascript" src="./js/form.js"></script> -->
   <script defer type="text/javascript" src="./js/query.js"></script>
   <script defer type="text/javascript" src="./js/animation.js"></script>
   <script defer type="text/javascript" src="./js/matchMedia.js"></script>

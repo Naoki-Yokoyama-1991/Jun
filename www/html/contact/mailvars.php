@@ -1,8 +1,8 @@
 <?php
 //メールの宛先（To）のメールアドレス
-define('MAIL_TO', "kionako96@gmail.com");
+define('MAIL_TO', 'kionako96@gmail.com');
 //メールの宛先（To）の名前
-define('MAIL_TO_NAME', "横山直記 ");
+define('MAIL_TO_NAME', '横山直記');
 //Cc の名前
 define('MAIL_CC', 'kionako96@gmail.com');
 //Cc の名前

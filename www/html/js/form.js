@@ -436,9 +436,8 @@ window.addEventListener(
 
     //submit
     btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      // form.method = 'post';
-      // form.action = ''; //← PHPファイル
+      form.method = 'post';
+      form.action = 'index.php'; //← PHPファイル
       form.submit();
     });
   },

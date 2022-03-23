@@ -11,6 +11,14 @@ services:
       - php
 
   php:
-    build: ./php
+    build:
+     context: ./
+     dockerfile: php/Dockerfile
     volumes:
-      - ./www/html:/var/www/html
+     - ./www/html:/var/www/html
+
+  mail:
+    image: schickling/mailcatcher
+    ports:
+      - "1080:1080"
+      - "1025:1025"
