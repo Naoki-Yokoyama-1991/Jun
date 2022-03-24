@@ -2,6 +2,12 @@
 //エスケープ処理やデータチェックを行う関数のファイルの読み込み
 require 'contact/contact.php';
 
+$to = "to@example.com";
+$subject = "TEST";
+$message = "This is TEST.\r\nHow are you?";
+$headers = "From: from@example.com";
+mail($to, $subject, $message, $headers);
+
 ?>
 
 <!DOCTYPE html>
@@ -219,17 +225,15 @@ require 'contact/contact.php';
       <!----- j-recommend ----->
       <section class="j-form" id="jForm">
         <h3 class="j-form-title">お問合せ・資料請求</h3>
-        <div class="j-fo-top">
-          <button class="j-button j-bu-success">
-            お問合せ
-          </button>
-          <button class="j-button">
-            資料請求
-          </button>
-        </div>
 
-        <form id="form" method="post" action="">
 
+        <form id="form">
+          <div class="j-fo-top">
+            <input type="radio" name="subject" value="お問合せ" id="foContact" checked required>
+            <label for="foContact" class="j-button j-bu-success">お問合せ</label>
+            <input type="radio" name="subject" value="資料請求" id="foDocument">
+            <label for="foDocument" class="j-button">資料請求</label>
+          </div>
           <!----- name ----->
           <div class=" j-formIn">
             <div class="j-inner">
@@ -317,7 +321,7 @@ require 'contact/contact.php';
   <!-- js -->
   <script defer type="text/javascript" src="./js/app.js"></script>
   <script defer type="text/javascript" src="./js/youtube.js"></script>
-  <!-- <script defer type="text/javascript" src="./js/form.js"></script> -->
+  <script defer type="text/javascript" src="./js/form.js"></script>
   <script defer type="text/javascript" src="./js/query.js"></script>
   <script defer type="text/javascript" src="./js/animation.js"></script>
   <script defer type="text/javascript" src="./js/matchMedia.js"></script>
@@ -325,3 +329,8 @@ require 'contact/contact.php';
 </body>
 
 </html>
+<script>
+// トップお問合わせ・資料請求切替
+var buttonTop = document.getElementsByClassName('j-bu-success');
+console.log(buttonTop[0].textContent);
+</script>

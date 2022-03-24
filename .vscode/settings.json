@@ -1,5 +1,7 @@
 {
   "editor.fontSize": 16,
   "editor.fontFamily": "Ricty Diminished",
-  "liveServer.settings.port": 5501
+  "liveServer.settings.port": 5501,
+  "prettier.singleQuote": true,
+  "prettier.jsxSingleQuote": true
 }

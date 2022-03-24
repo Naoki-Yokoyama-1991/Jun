@@ -1,19 +1,87 @@
 @charset "UTF-8";
 /* Google Fonts */
 @import url(https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600&display=swap);
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -23,8 +91,17 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
@@ -32,16 +109,20 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
-blockquote, q {
+blockquote,
+q {
   quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: '';
   content: none;
 }
@@ -58,13 +139,13 @@ table {
 .scr-target {
   opacity: 0;
   -webkit-transform: translate3d(0, 50px, 0);
-          transform: translate3d(0, 50px, 0);
+  transform: translate3d(0, 50px, 0);
 }
 
 .scr-target.is-active {
   opacity: 1;
   -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   -webkit-transition: 2s;
   transition: 2s;
 }
@@ -78,12 +159,12 @@ html {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   color: #030508;
-  font-family: "Noto Serif JP", serif, "MS P明朝", "ヒラギノ明朝";
+  font-family: 'Noto Serif JP', serif, 'MS P明朝', 'ヒラギノ明朝';
   font-weight: 400;
 }
 
@@ -112,68 +193,122 @@ a {
   position: relative;
 }
 
-.j-lead .j-row, .j-lead .j-message .j-row-middle, .j-message .j-lead .j-row-middle, .j-lead .j-message .j-width-down, .j-message .j-lead .j-width-down, .j-lead .j-message .j-me-main-down, .j-message .j-lead .j-me-main-down {
+.j-lead .j-row,
+.j-lead .j-message .j-row-middle,
+.j-message .j-lead .j-row-middle,
+.j-lead .j-message .j-width-down,
+.j-message .j-lead .j-width-down,
+.j-lead .j-message .j-me-main-down,
+.j-message .j-lead .j-me-main-down {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   height: 100vh;
 }
 
 @media screen and (max-width: 500px) {
-  .j-lead .j-row, .j-lead .j-message .j-row-middle, .j-message .j-lead .j-row-middle, .j-lead .j-message .j-width-down, .j-message .j-lead .j-width-down, .j-lead .j-message .j-me-main-down, .j-message .j-lead .j-me-main-down {
+  .j-lead .j-row,
+  .j-lead .j-message .j-row-middle,
+  .j-message .j-lead .j-row-middle,
+  .j-lead .j-message .j-width-down,
+  .j-message .j-lead .j-width-down,
+  .j-lead .j-message .j-me-main-down,
+  .j-message .j-lead .j-me-main-down {
     display: block;
   }
 }
 
-.j-lead .j-row .j-width-left, .j-lead .j-message .j-row-middle .j-width-left, .j-message .j-lead .j-row-middle .j-width-left, .j-lead .j-message .j-width-down .j-width-left, .j-message .j-lead .j-width-down .j-width-left, .j-lead .j-message .j-me-main-down .j-width-left, .j-message .j-lead .j-me-main-down .j-width-left {
+.j-lead .j-row .j-width-left,
+.j-lead .j-message .j-row-middle .j-width-left,
+.j-message .j-lead .j-row-middle .j-width-left,
+.j-lead .j-message .j-width-down .j-width-left,
+.j-message .j-lead .j-width-down .j-width-left,
+.j-lead .j-message .j-me-main-down .j-width-left,
+.j-message .j-lead .j-me-main-down .j-width-left {
   width: 37%;
   margin: 3rem 5rem 0 5rem;
 }
 
 @media screen and (max-width: 500px) {
-  .j-lead .j-row .j-width-left, .j-lead .j-message .j-row-middle .j-width-left, .j-message .j-lead .j-row-middle .j-width-left, .j-lead .j-message .j-width-down .j-width-left, .j-message .j-lead .j-width-down .j-width-left, .j-lead .j-message .j-me-main-down .j-width-left, .j-message .j-lead .j-me-main-down .j-width-left {
+  .j-lead .j-row .j-width-left,
+  .j-lead .j-message .j-row-middle .j-width-left,
+  .j-message .j-lead .j-row-middle .j-width-left,
+  .j-lead .j-message .j-width-down .j-width-left,
+  .j-message .j-lead .j-width-down .j-width-left,
+  .j-lead .j-message .j-me-main-down .j-width-left,
+  .j-message .j-lead .j-me-main-down .j-width-left {
     width: 100%;
     margin: 0;
   }
 }
 
-.j-lead .j-row .j-width-left .logo, .j-lead .j-message .j-row-middle .j-width-left .logo, .j-message .j-lead .j-row-middle .j-width-left .logo, .j-lead .j-message .j-width-down .j-width-left .logo, .j-message .j-lead .j-width-down .j-width-left .logo, .j-lead .j-message .j-me-main-down .j-width-left .logo, .j-message .j-lead .j-me-main-down .j-width-left .logo {
+.j-lead .j-row .j-width-left .logo,
+.j-lead .j-message .j-row-middle .j-width-left .logo,
+.j-message .j-lead .j-row-middle .j-width-left .logo,
+.j-lead .j-message .j-width-down .j-width-left .logo,
+.j-message .j-lead .j-width-down .j-width-left .logo,
+.j-lead .j-message .j-me-main-down .j-width-left .logo,
+.j-message .j-lead .j-me-main-down .j-width-left .logo {
   width: 12.6rem;
   height: auto;
   margin: 0 0 5.7rem;
 }
 
 @media screen and (max-width: 500px) {
-  .j-lead .j-row .j-width-left .logo, .j-lead .j-message .j-row-middle .j-width-left .logo, .j-message .j-lead .j-row-middle .j-width-left .logo, .j-lead .j-message .j-width-down .j-width-left .logo, .j-message .j-lead .j-width-down .j-width-left .logo, .j-lead .j-message .j-me-main-down .j-width-left .logo, .j-message .j-lead .j-me-main-down .j-width-left .logo {
+  .j-lead .j-row .j-width-left .logo,
+  .j-lead .j-message .j-row-middle .j-width-left .logo,
+  .j-message .j-lead .j-row-middle .j-width-left .logo,
+  .j-lead .j-message .j-width-down .j-width-left .logo,
+  .j-message .j-lead .j-width-down .j-width-left .logo,
+  .j-lead .j-message .j-me-main-down .j-width-left .logo,
+  .j-message .j-lead .j-me-main-down .j-width-left .logo {
     width: 10rem;
     margin: 2rem 0 4rem 2rem;
   }
 }
 
-.j-lead .j-row .j-width-left h3, .j-lead .j-message .j-row-middle .j-width-left h3, .j-message .j-lead .j-row-middle .j-width-left h3, .j-lead .j-message .j-width-down .j-width-left h3, .j-message .j-lead .j-width-down .j-width-left h3, .j-lead .j-message .j-me-main-down .j-width-left h3, .j-message .j-lead .j-me-main-down .j-width-left h3 {
+.j-lead .j-row .j-width-left h3,
+.j-lead .j-message .j-row-middle .j-width-left h3,
+.j-message .j-lead .j-row-middle .j-width-left h3,
+.j-lead .j-message .j-width-down .j-width-left h3,
+.j-message .j-lead .j-width-down .j-width-left h3,
+.j-lead .j-message .j-me-main-down .j-width-left h3,
+.j-message .j-lead .j-me-main-down .j-width-left h3 {
   font-size: 2rem;
   font-weight: 400;
   margin: 1rem 0 2rem;
 }
 
 @media screen and (max-width: 500px) {
-  .j-lead .j-row .j-width-left h3, .j-lead .j-message .j-row-middle .j-width-left h3, .j-message .j-lead .j-row-middle .j-width-left h3, .j-lead .j-message .j-width-down .j-width-left h3, .j-message .j-lead .j-width-down .j-width-left h3, .j-lead .j-message .j-me-main-down .j-width-left h3, .j-message .j-lead .j-me-main-down .j-width-left h3 {
+  .j-lead .j-row .j-width-left h3,
+  .j-lead .j-message .j-row-middle .j-width-left h3,
+  .j-message .j-lead .j-row-middle .j-width-left h3,
+  .j-lead .j-message .j-width-down .j-width-left h3,
+  .j-message .j-lead .j-width-down .j-width-left h3,
+  .j-lead .j-message .j-me-main-down .j-width-left h3,
+  .j-message .j-lead .j-me-main-down .j-width-left h3 {
     float: right;
     margin: 8.6rem 3rem 0 0;
   }
 }
 
-.j-lead .j-row .j-width-left h1, .j-lead .j-message .j-row-middle .j-width-left h1, .j-message .j-lead .j-row-middle .j-width-left h1, .j-lead .j-message .j-width-down .j-width-left h1, .j-message .j-lead .j-width-down .j-width-left h1, .j-lead .j-message .j-me-main-down .j-width-left h1, .j-message .j-lead .j-me-main-down .j-width-left h1 {
+.j-lead .j-row .j-width-left h1,
+.j-lead .j-message .j-row-middle .j-width-left h1,
+.j-message .j-lead .j-row-middle .j-width-left h1,
+.j-lead .j-message .j-width-down .j-width-left h1,
+.j-message .j-lead .j-width-down .j-width-left h1,
+.j-lead .j-message .j-me-main-down .j-width-left h1,
+.j-message .j-lead .j-me-main-down .j-width-left h1 {
   font-size: 3.4rem;
   font-weight: 300;
   margin: 0 0 3rem;
@@ -181,7 +316,13 @@ a {
 }
 
 @media screen and (max-width: 500px) {
-  .j-lead .j-row .j-width-left h1, .j-lead .j-message .j-row-middle .j-width-left h1, .j-message .j-lead .j-row-middle .j-width-left h1, .j-lead .j-message .j-width-down .j-width-left h1, .j-message .j-lead .j-width-down .j-width-left h1, .j-lead .j-message .j-me-main-down .j-width-left h1, .j-message .j-lead .j-me-main-down .j-width-left h1 {
+  .j-lead .j-row .j-width-left h1,
+  .j-lead .j-message .j-row-middle .j-width-left h1,
+  .j-message .j-lead .j-row-middle .j-width-left h1,
+  .j-lead .j-message .j-width-down .j-width-left h1,
+  .j-message .j-lead .j-width-down .j-width-left h1,
+  .j-lead .j-message .j-me-main-down .j-width-left h1,
+  .j-message .j-lead .j-me-main-down .j-width-left h1 {
     font-size: 2.8rem;
     font-weight: 300;
     margin: 2.8rem auto 1rem;
@@ -191,25 +332,37 @@ a {
   }
 }
 
-.j-lead .j-row .j-width-left .bus, .j-lead .j-message .j-row-middle .j-width-left .bus, .j-message .j-lead .j-row-middle .j-width-left .bus, .j-lead .j-message .j-width-down .j-width-left .bus, .j-message .j-lead .j-width-down .j-width-left .bus, .j-lead .j-message .j-me-main-down .j-width-left .bus, .j-message .j-lead .j-me-main-down .j-width-left .bus {
+.j-lead .j-row .j-width-left .bus,
+.j-lead .j-message .j-row-middle .j-width-left .bus,
+.j-message .j-lead .j-row-middle .j-width-left .bus,
+.j-lead .j-message .j-width-down .j-width-left .bus,
+.j-message .j-lead .j-width-down .j-width-left .bus,
+.j-lead .j-message .j-me-main-down .j-width-left .bus,
+.j-message .j-lead .j-me-main-down .j-width-left .bus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   width: 100%;
 }
 
 @media screen and (max-width: 500px) {
-  .j-lead .j-row .j-width-left .bus, .j-lead .j-message .j-row-middle .j-width-left .bus, .j-message .j-lead .j-row-middle .j-width-left .bus, .j-lead .j-message .j-width-down .j-width-left .bus, .j-message .j-lead .j-width-down .j-width-left .bus, .j-lead .j-message .j-me-main-down .j-width-left .bus, .j-message .j-lead .j-me-main-down .j-width-left .bus {
+  .j-lead .j-row .j-width-left .bus,
+  .j-lead .j-message .j-row-middle .j-width-left .bus,
+  .j-message .j-lead .j-row-middle .j-width-left .bus,
+  .j-lead .j-message .j-width-down .j-width-left .bus,
+  .j-message .j-lead .j-width-down .j-width-left .bus,
+  .j-lead .j-message .j-me-main-down .j-width-left .bus,
+  .j-message .j-lead .j-me-main-down .j-width-left .bus {
     position: relative;
     top: 0;
     right: 0;
@@ -221,14 +374,26 @@ a {
   }
 }
 
-.j-lead .j-row .j-width-left .bus p, .j-lead .j-message .j-row-middle .j-width-left .bus p, .j-message .j-lead .j-row-middle .j-width-left .bus p, .j-lead .j-message .j-width-down .j-width-left .bus p, .j-message .j-lead .j-width-down .j-width-left .bus p, .j-lead .j-message .j-me-main-down .j-width-left .bus p, .j-message .j-lead .j-me-main-down .j-width-left .bus p {
+.j-lead .j-row .j-width-left .bus p,
+.j-lead .j-message .j-row-middle .j-width-left .bus p,
+.j-message .j-lead .j-row-middle .j-width-left .bus p,
+.j-lead .j-message .j-width-down .j-width-left .bus p,
+.j-message .j-lead .j-width-down .j-width-left .bus p,
+.j-lead .j-message .j-me-main-down .j-width-left .bus p,
+.j-message .j-lead .j-me-main-down .j-width-left .bus p {
   padding: 1.8rem 0 0;
   border-top: 1px solid #030508;
   width: 100%;
 }
 
 @media screen and (max-width: 500px) {
-  .j-lead .j-row .j-width-left .bus p, .j-lead .j-message .j-row-middle .j-width-left .bus p, .j-message .j-lead .j-row-middle .j-width-left .bus p, .j-lead .j-message .j-width-down .j-width-left .bus p, .j-message .j-lead .j-width-down .j-width-left .bus p, .j-lead .j-message .j-me-main-down .j-width-left .bus p, .j-message .j-lead .j-me-main-down .j-width-left .bus p {
+  .j-lead .j-row .j-width-left .bus p,
+  .j-lead .j-message .j-row-middle .j-width-left .bus p,
+  .j-message .j-lead .j-row-middle .j-width-left .bus p,
+  .j-lead .j-message .j-width-down .j-width-left .bus p,
+  .j-message .j-lead .j-width-down .j-width-left .bus p,
+  .j-lead .j-message .j-me-main-down .j-width-left .bus p,
+  .j-message .j-lead .j-me-main-down .j-width-left .bus p {
     font-size: 1.4rem;
     font-weight: 300;
     padding: 3rem 0 0;
@@ -236,7 +401,13 @@ a {
   }
 }
 
-.j-lead .j-row .j-width-left .bus img, .j-lead .j-message .j-row-middle .j-width-left .bus img, .j-message .j-lead .j-row-middle .j-width-left .bus img, .j-lead .j-message .j-width-down .j-width-left .bus img, .j-message .j-lead .j-width-down .j-width-left .bus img, .j-lead .j-message .j-me-main-down .j-width-left .bus img, .j-message .j-lead .j-me-main-down .j-width-left .bus img {
+.j-lead .j-row .j-width-left .bus img,
+.j-lead .j-message .j-row-middle .j-width-left .bus img,
+.j-message .j-lead .j-row-middle .j-width-left .bus img,
+.j-lead .j-message .j-width-down .j-width-left .bus img,
+.j-message .j-lead .j-width-down .j-width-left .bus img,
+.j-lead .j-message .j-me-main-down .j-width-left .bus img,
+.j-message .j-lead .j-me-main-down .j-width-left .bus img {
   position: relative;
   top: none;
   right: 0;
@@ -246,7 +417,13 @@ a {
 }
 
 @media screen and (max-width: 500px) {
-  .j-lead .j-row .j-width-left .bus img, .j-lead .j-message .j-row-middle .j-width-left .bus img, .j-message .j-lead .j-row-middle .j-width-left .bus img, .j-lead .j-message .j-width-down .j-width-left .bus img, .j-message .j-lead .j-width-down .j-width-left .bus img, .j-lead .j-message .j-me-main-down .j-width-left .bus img, .j-message .j-lead .j-me-main-down .j-width-left .bus img {
+  .j-lead .j-row .j-width-left .bus img,
+  .j-lead .j-message .j-row-middle .j-width-left .bus img,
+  .j-message .j-lead .j-row-middle .j-width-left .bus img,
+  .j-lead .j-message .j-width-down .j-width-left .bus img,
+  .j-message .j-lead .j-width-down .j-width-left .bus img,
+  .j-lead .j-message .j-me-main-down .j-width-left .bus img,
+  .j-message .j-lead .j-me-main-down .j-width-left .bus img {
     width: 12.5rem;
     position: absolute;
     top: none;
@@ -256,57 +433,87 @@ a {
   }
 }
 
-.j-lead .j-row .j-width-left .bus span, .j-lead .j-message .j-row-middle .j-width-left .bus span, .j-message .j-lead .j-row-middle .j-width-left .bus span, .j-lead .j-message .j-width-down .j-width-left .bus span, .j-message .j-lead .j-width-down .j-width-left .bus span, .j-lead .j-message .j-me-main-down .j-width-left .bus span, .j-message .j-lead .j-me-main-down .j-width-left .bus span {
+.j-lead .j-row .j-width-left .bus span,
+.j-lead .j-message .j-row-middle .j-width-left .bus span,
+.j-message .j-lead .j-row-middle .j-width-left .bus span,
+.j-lead .j-message .j-width-down .j-width-left .bus span,
+.j-message .j-lead .j-width-down .j-width-left .bus span,
+.j-lead .j-message .j-me-main-down .j-width-left .bus span,
+.j-message .j-lead .j-me-main-down .j-width-left .bus span {
   width: 20%;
   display: block;
   border-top: 1px solid #030508;
 }
 
 @media screen and (max-width: 500px) {
-  .j-lead .j-row .j-width-left .bus span, .j-lead .j-message .j-row-middle .j-width-left .bus span, .j-message .j-lead .j-row-middle .j-width-left .bus span, .j-lead .j-message .j-width-down .j-width-left .bus span, .j-message .j-lead .j-width-down .j-width-left .bus span, .j-lead .j-message .j-me-main-down .j-width-left .bus span, .j-message .j-lead .j-me-main-down .j-width-left .bus span {
+  .j-lead .j-row .j-width-left .bus span,
+  .j-lead .j-message .j-row-middle .j-width-left .bus span,
+  .j-message .j-lead .j-row-middle .j-width-left .bus span,
+  .j-lead .j-message .j-width-down .j-width-left .bus span,
+  .j-message .j-lead .j-width-down .j-width-left .bus span,
+  .j-lead .j-message .j-me-main-down .j-width-left .bus span,
+  .j-message .j-lead .j-me-main-down .j-width-left .bus span {
     display: none;
   }
 }
 
-.j-lead .j-row .j-width-left .j-btn, .j-lead .j-message .j-row-middle .j-width-left .j-btn, .j-message .j-lead .j-row-middle .j-width-left .j-btn, .j-lead .j-message .j-width-down .j-width-left .j-btn, .j-message .j-lead .j-width-down .j-width-left .j-btn, .j-lead .j-message .j-me-main-down .j-width-left .j-btn, .j-message .j-lead .j-me-main-down .j-width-left .j-btn {
+.j-lead .j-row .j-width-left .j-btn,
+.j-lead .j-message .j-row-middle .j-width-left .j-btn,
+.j-message .j-lead .j-row-middle .j-width-left .j-btn,
+.j-lead .j-message .j-width-down .j-width-left .j-btn,
+.j-message .j-lead .j-width-down .j-width-left .j-btn,
+.j-lead .j-message .j-me-main-down .j-width-left .j-btn,
+.j-message .j-lead .j-me-main-down .j-width-left .j-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   position: absolute;
   bottom: 5rem;
 }
 
 @media screen and (max-width: 500px) {
-  .j-lead .j-row .j-width-left .j-btn, .j-lead .j-message .j-row-middle .j-width-left .j-btn, .j-message .j-lead .j-row-middle .j-width-left .j-btn, .j-lead .j-message .j-width-down .j-width-left .j-btn, .j-message .j-lead .j-width-down .j-width-left .j-btn, .j-lead .j-message .j-me-main-down .j-width-left .j-btn, .j-message .j-lead .j-me-main-down .j-width-left .j-btn {
+  .j-lead .j-row .j-width-left .j-btn,
+  .j-lead .j-message .j-row-middle .j-width-left .j-btn,
+  .j-message .j-lead .j-row-middle .j-width-left .j-btn,
+  .j-lead .j-message .j-width-down .j-width-left .j-btn,
+  .j-message .j-lead .j-width-down .j-width-left .j-btn,
+  .j-lead .j-message .j-me-main-down .j-width-left .j-btn,
+  .j-message .j-lead .j-me-main-down .j-width-left .j-btn {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
     width: 100%;
     bottom: 3rem;
   }
 }
 
-.j-lead .j-row .j-width-left .j-btn p, .j-lead .j-message .j-row-middle .j-width-left .j-btn p, .j-message .j-lead .j-row-middle .j-width-left .j-btn p, .j-lead .j-message .j-width-down .j-width-left .j-btn p, .j-message .j-lead .j-width-down .j-width-left .j-btn p, .j-lead .j-message .j-me-main-down .j-width-left .j-btn p, .j-message .j-lead .j-me-main-down .j-width-left .j-btn p {
+.j-lead .j-row .j-width-left .j-btn p,
+.j-lead .j-message .j-row-middle .j-width-left .j-btn p,
+.j-message .j-lead .j-row-middle .j-width-left .j-btn p,
+.j-lead .j-message .j-width-down .j-width-left .j-btn p,
+.j-message .j-lead .j-width-down .j-width-left .j-btn p,
+.j-lead .j-message .j-me-main-down .j-width-left .j-btn p,
+.j-message .j-lead .j-me-main-down .j-width-left .j-btn p {
   font-size: 1.6rem;
   font-weight: 400;
   border: 1px solid #030508;
@@ -317,27 +524,51 @@ a {
   text-align: center;
 }
 
-.j-lead .j-row .j-width-right, .j-lead .j-message .j-row-middle .j-width-right, .j-message .j-lead .j-row-middle .j-width-right, .j-lead .j-message .j-width-down .j-width-right, .j-message .j-lead .j-width-down .j-width-right, .j-lead .j-message .j-me-main-down .j-width-right, .j-message .j-lead .j-me-main-down .j-width-right {
+.j-lead .j-row .j-width-right,
+.j-lead .j-message .j-row-middle .j-width-right,
+.j-message .j-lead .j-row-middle .j-width-right,
+.j-lead .j-message .j-width-down .j-width-right,
+.j-message .j-lead .j-width-down .j-width-right,
+.j-lead .j-message .j-me-main-down .j-width-right,
+.j-message .j-lead .j-me-main-down .j-width-right {
   width: 63%;
   height: 53rem;
 }
 
 @media screen and (max-width: 500px) {
-  .j-lead .j-row .j-width-right, .j-lead .j-message .j-row-middle .j-width-right, .j-message .j-lead .j-row-middle .j-width-right, .j-lead .j-message .j-width-down .j-width-right, .j-message .j-lead .j-width-down .j-width-right, .j-lead .j-message .j-me-main-down .j-width-right, .j-message .j-lead .j-me-main-down .j-width-right {
+  .j-lead .j-row .j-width-right,
+  .j-lead .j-message .j-row-middle .j-width-right,
+  .j-message .j-lead .j-row-middle .j-width-right,
+  .j-lead .j-message .j-width-down .j-width-right,
+  .j-message .j-lead .j-width-down .j-width-right,
+  .j-lead .j-message .j-me-main-down .j-width-right,
+  .j-message .j-lead .j-me-main-down .j-width-right {
     width: 100%;
     height: 28rem;
   }
 }
 
-.j-lead .j-row .j-width-right img, .j-lead .j-message .j-row-middle .j-width-right img, .j-message .j-lead .j-row-middle .j-width-right img, .j-lead .j-message .j-width-down .j-width-right img, .j-message .j-lead .j-width-down .j-width-right img, .j-lead .j-message .j-me-main-down .j-width-right img, .j-message .j-lead .j-me-main-down .j-width-right img {
+.j-lead .j-row .j-width-right img,
+.j-lead .j-message .j-row-middle .j-width-right img,
+.j-message .j-lead .j-row-middle .j-width-right img,
+.j-lead .j-message .j-width-down .j-width-right img,
+.j-message .j-lead .j-width-down .j-width-right img,
+.j-lead .j-message .j-me-main-down .j-width-right img,
+.j-message .j-lead .j-me-main-down .j-width-right img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100vh;
 }
 
 @media screen and (max-width: 500px) {
-  .j-lead .j-row .j-width-right img, .j-lead .j-message .j-row-middle .j-width-right img, .j-message .j-lead .j-row-middle .j-width-right img, .j-lead .j-message .j-width-down .j-width-right img, .j-message .j-lead .j-width-down .j-width-right img, .j-lead .j-message .j-me-main-down .j-width-right img, .j-message .j-lead .j-me-main-down .j-width-right img {
+  .j-lead .j-row .j-width-right img,
+  .j-lead .j-message .j-row-middle .j-width-right img,
+  .j-message .j-lead .j-row-middle .j-width-right img,
+  .j-lead .j-message .j-width-down .j-width-right img,
+  .j-message .j-lead .j-width-down .j-width-right img,
+  .j-lead .j-message .j-me-main-down .j-width-right img,
+  .j-message .j-lead .j-me-main-down .j-width-right img {
     height: 100%;
   }
 }
@@ -363,62 +594,83 @@ a {
 }
 
 /* j-message */
-.j-message .j-row, .j-message .j-row-middle, .j-message .j-width-down, .j-message .j-me-main-down {
+.j-message .j-row,
+.j-message .j-row-middle,
+.j-message .j-width-down,
+.j-message .j-me-main-down {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 8rem 0 0;
 }
 
 @media screen and (max-width: 500px) {
-  .j-message .j-row, .j-message .j-row-middle, .j-message .j-width-down, .j-message .j-me-main-down {
+  .j-message .j-row,
+  .j-message .j-row-middle,
+  .j-message .j-width-down,
+  .j-message .j-me-main-down {
     display: block;
     margin: 6rem 0 0;
   }
 }
 
-.j-message .j-row .j-width-left, .j-message .j-row-middle .j-width-left, .j-message .j-width-down .j-width-left, .j-message .j-me-main-down .j-width-left {
+.j-message .j-row .j-width-left,
+.j-message .j-row-middle .j-width-left,
+.j-message .j-width-down .j-width-left,
+.j-message .j-me-main-down .j-width-left {
   width: 63rem;
   margin: 0 7rem 0 0;
 }
 
 @media screen and (max-width: 500px) {
-  .j-message .j-row .j-width-left, .j-message .j-row-middle .j-width-left, .j-message .j-width-down .j-width-left, .j-message .j-me-main-down .j-width-left {
+  .j-message .j-row .j-width-left,
+  .j-message .j-row-middle .j-width-left,
+  .j-message .j-width-down .j-width-left,
+  .j-message .j-me-main-down .j-width-left {
     width: 100%;
     height: 20rem;
     margin: 0 auto 5rem;
   }
 }
 
-.j-message .j-row .j-width-left img, .j-message .j-row-middle .j-width-left img, .j-message .j-width-down .j-width-left img, .j-message .j-me-main-down .j-width-left img {
+.j-message .j-row .j-width-left img,
+.j-message .j-row-middle .j-width-left img,
+.j-message .j-width-down .j-width-left img,
+.j-message .j-me-main-down .j-width-left img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
-.j-message .j-row p, .j-message .j-row-middle p, .j-message .j-width-down p, .j-message .j-me-main-down p {
+.j-message .j-row p,
+.j-message .j-row-middle p,
+.j-message .j-width-down p,
+.j-message .j-me-main-down p {
   font-size: 1.8rem;
   font-weight: 300;
   -ms-writing-mode: tb-rl;
   -webkit-writing-mode: vertical-rl;
-          writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
   line-height: 2.1;
   letter-spacing: 0.4rem;
 }
 
 @media screen and (max-width: 500px) {
-  .j-message .j-row p, .j-message .j-row-middle p, .j-message .j-width-down p, .j-message .j-me-main-down p {
+  .j-message .j-row p,
+  .j-message .j-row-middle p,
+  .j-message .j-width-down p,
+  .j-message .j-me-main-down p {
     font-size: 1.5rem;
     font-weight: 300;
     line-height: 2.5;
@@ -432,15 +684,15 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 500px) {
@@ -461,7 +713,8 @@ a {
   }
 }
 
-.j-message .j-me-right, .j-message .j-me-left {
+.j-message .j-me-right,
+.j-message .j-me-left {
   position: relative;
   top: none;
   right: 0;
@@ -472,7 +725,8 @@ a {
 }
 
 @media screen and (max-width: 500px) {
-  .j-message .j-me-right, .j-message .j-me-left {
+  .j-message .j-me-right,
+  .j-message .j-me-left {
     position: relative;
     top: 0;
     right: 0;
@@ -484,9 +738,10 @@ a {
   }
 }
 
-.j-message .j-me-right img, .j-message .j-me-left img {
+.j-message .j-me-right img,
+.j-message .j-me-left img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -520,7 +775,7 @@ a {
 
 .j-message .j-width-down .j-width-right-me img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -539,7 +794,7 @@ a {
 
 .j-message .j-me-main img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -585,15 +840,15 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   margin: 10rem 0 10rem;
 }
 
@@ -700,15 +955,15 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   margin: 10rem 0 8rem 0;
 }
 
@@ -769,7 +1024,11 @@ a {
   }
 }
 
-.j-flow-title, .j-voice-title, .j-inquiry-title, .j-recommend-title, .j-form-title {
+.j-flow-title,
+.j-voice-title,
+.j-inquiry-title,
+.j-recommend-title,
+.j-form-title {
   font-size: 2.6rem;
   font-weight: 400;
   text-align: center;
@@ -778,14 +1037,22 @@ a {
 }
 
 @media screen and (max-width: 500px) {
-  .j-flow-title, .j-voice-title, .j-inquiry-title, .j-recommend-title, .j-form-title {
+  .j-flow-title,
+  .j-voice-title,
+  .j-inquiry-title,
+  .j-recommend-title,
+  .j-form-title {
     font-size: 2rem;
     font-weight: 400;
     margin: 0 0 5rem;
   }
 }
 
-.j-flow-title span, .j-voice-title span, .j-inquiry-title span, .j-recommend-title span, .j-form-title span {
+.j-flow-title span,
+.j-voice-title span,
+.j-inquiry-title span,
+.j-recommend-title span,
+.j-form-title span {
   font-size: 1.2rem;
   font-weight: 300;
   display: block;
@@ -799,15 +1066,15 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   width: 70rem;
   margin: 0 auto 10rem;
   position: relative;
@@ -932,7 +1199,7 @@ a {
 
 #flow .j-fl-list .j-fl-right img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -963,15 +1230,15 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   margin: 0 auto 10rem;
 }
 
@@ -1067,7 +1334,7 @@ a {
 
 .j-vo-list .j-vo-right img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -1136,15 +1403,15 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
 }
 
 @media screen and (max-width: 500px) {
@@ -1270,15 +1537,15 @@ a {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   background-color: #fff6e7;
   width: 100%;
   margin: 0 auto;
@@ -1302,15 +1569,15 @@ a {
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
     width: 90%;
     margin: 0 auto 2rem;
   }
@@ -1330,7 +1597,7 @@ a {
 
 #recommend .j-re-item .j-re-image img {
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
@@ -1374,54 +1641,6 @@ a {
   }
 }
 
-.j-fo-top {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
-
-.j-fo-top button {
-  background-color: #fff;
-  font-size: 2rem;
-  font-weight: 300;
-  font-family: "Noto Serif JP", serif, "MS P明朝", "ヒラギノ明朝";
-  border: none;
-  margin: 0 2.5rem 7rem;
-  width: 13rem;
-  padding: 0 0 4rem 0;
-  border-bottom: 3px solid #969696;
-  color: #969696;
-}
-
-.j-fo-top button:hover {
-  cursor: pointer;
-}
-
-@media screen and (max-width: 500px) {
-  .j-fo-top button {
-    font-size: 1.6rem;
-    font-weight: 300;
-    margin: 0 2rem 7rem;
-    padding: 0 0 2.5rem 0;
-    width: 11rem;
-  }
-}
-
-.j-fo-top .j-bu-success {
-  border-bottom: 3px solid #030508;
-  color: #030508;
-}
-
 form {
   width: 86rem;
   margin: 0 auto;
@@ -1431,6 +1650,62 @@ form {
   form {
     width: 90%;
   }
+}
+
+form .j-fo-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+form .j-fo-top input[type='radio'],
+form .j-fo-top .j-formIn textarea[type='radio'],
+form .j-formIn .j-fo-top textarea[type='radio'] {
+  display: none;
+}
+
+form .j-fo-top .j-button {
+  background-color: #fff;
+  font-size: 2rem;
+  font-weight: 300;
+  font-family: 'Noto Serif JP', serif, 'MS P明朝', 'ヒラギノ明朝';
+  border: none;
+  margin: 0 2.5rem 7rem;
+  width: 13rem;
+  padding: 0 0 4rem;
+  border-bottom: 3px solid #969696;
+  color: #969696;
+  display: inline-block;
+  text-align: center;
+}
+
+form .j-fo-top .j-button:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  form .j-fo-top .j-button {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin: 0 2rem 7rem;
+    padding: 0 0 2.5rem 0;
+    width: 11rem;
+  }
+}
+
+form .j-fo-top .j-bu-success {
+  border-bottom: 3px solid #030508;
+  color: #030508;
 }
 
 form .j-formIn {
@@ -1452,15 +1727,15 @@ form .j-formIn .j-inner {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 @media screen and (max-width: 500px) {
@@ -1512,7 +1787,8 @@ form .j-formIn span {
   }
 }
 
-form .j-formIn input, form .j-formIn textarea {
+form .j-formIn input,
+form .j-formIn textarea {
   outline: none;
   height: 6rem;
   width: 61rem;
@@ -1525,15 +1801,17 @@ form .j-formIn input, form .j-formIn textarea {
 }
 
 @media screen and (max-width: 500px) {
-  form .j-formIn input, form .j-formIn textarea {
+  form .j-formIn input,
+  form .j-formIn textarea {
     width: 100%;
     margin: 1.8rem 0 0;
   }
 }
 
-form .j-formIn input:-webkit-autofill, form .j-formIn textarea:-webkit-autofill {
+form .j-formIn input:-webkit-autofill,
+form .j-formIn textarea:-webkit-autofill {
   -webkit-box-shadow: 0 0 0px 1000px #f5f5f5 inset;
-          box-shadow: 0 0 0px 1000px #f5f5f5 inset;
+  box-shadow: 0 0 0px 1000px #f5f5f5 inset;
 }
 
 form .j-formIn textarea {
@@ -1551,15 +1829,15 @@ form #send {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 100%;
   padding: 0 0 4rem 0;
   border-bottom: 1px solid #f5f5f5;
@@ -1581,7 +1859,9 @@ form #send label {
   width: 25rem;
 }
 
-form #send input[type='radio'], form #send .j-formIn textarea[type='radio'], form .j-formIn #send textarea[type='radio'] {
+form #send input[type='radio'],
+form #send .j-formIn textarea[type='radio'],
+form .j-formIn #send textarea[type='radio'] {
   display: none;
 }
 
@@ -1624,7 +1904,7 @@ form button {
   height: 7rem;
   font-size: 1.8rem;
   font-weight: 400;
-  font-family: "Noto Serif JP", serif, "MS P明朝", "ヒラギノ明朝";
+  font-family: 'Noto Serif JP', serif, 'MS P明朝', 'ヒラギノ明朝';
   line-height: 7rem;
   border: none;
 }
@@ -1662,15 +1942,15 @@ footer {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 100%;
 }
 
@@ -1749,7 +2029,7 @@ footer div img {
   top: 45%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   z-index: 105;
 }
 
