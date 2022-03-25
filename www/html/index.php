@@ -1,14 +1,9 @@
 <?php
 //エスケープ処理やデータチェックを行う関数のファイルの読み込み
 require 'contact/contact.php';
-
-$to = "to@example.com";
-$subject = "TEST";
-$message = "This is TEST.\r\nHow are you?";
-$headers = "From: from@example.com";
-mail($to, $subject, $message, $headers);
-
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -225,8 +220,38 @@ mail($to, $subject, $message, $headers);
       <!----- j-recommend ----->
       <section class="j-form" id="jForm">
         <h3 class="j-form-title">お問合せ・資料請求</h3>
-
-
+        <?php if (!empty($error) && $error && !$result): // 送信が失敗した場合?>
+        <script>
+        var form = document.getElementById('form');
+        form.reset();
+        </script>
+        <h4>送信失敗</h4>
+        <p>申し訳ございませんが、送信に失敗しました。</p>
+        <p>しばらくしてもう一度お試しになるか、メールにてご連絡ください。</p>
+        <p>メール：<a href="mailto:info@example.com">Contact</a></p>
+        <span><?php if (isset($error['subject'])) {
+    echo h($error['subject']);
+} ?></span>
+        <span><?php if (isset($error['name'])) {
+    echo h($error['name']);
+} ?></span>
+        <span><?php if (isset($error['tel'])) {
+    echo h($error['tel']);
+} ?></span>
+        <span><?php if (isset($error['email'])) {
+    echo h($error['email']);
+} ?></span>
+        <span><?php if (isset($error['postCode'])) {
+    echo h($error['postCode']);
+} ?></span>
+        <span><?php if (isset($error['address'])) {
+    echo h($error['address']);
+} ?></span>
+        <span><?php if (isset($error['body'])) {
+    echo h($error['body']);
+} ?></span>
+        <hr>
+        <?php endif; ?>
         <form id="form">
           <div class="j-fo-top">
             <input type="radio" name="subject" value="お問合せ" id="foContact" checked required>
@@ -246,7 +271,7 @@ mail($to, $subject, $message, $headers);
           <div class="j-formIn">
             <div class="j-inner">
               <label>お電話番号</label><input type="tel" name="tel" size="17" maxlength="17" id="tel" autocomplete="tel"
-                value="<?php echo h($tel); ?>">
+                placeholder="ハイフンなしでご入力ください" value="<?php echo h($tel); ?>">
             </div>
             <p id="tel-error-message"></p>
           </div>
@@ -269,15 +294,15 @@ mail($to, $subject, $message, $headers);
           <!----- postal ----->
           <div class="j-formIn">
             <div class="j-inner">
-              <label>郵便番号</label><input type="text" name="postal-code" size="10" maxlength="10" id="postal-code"
-                autocomplete="postal-code">
+              <label>郵便番号</label><input type="text" name="postCode" size="10" maxlength="10" id="postal-code"
+                placeholder="ハイフンなしでご入力ください" autocomplete="postal-code" value="<?php echo h($postCode); ?>">
             </div>
             <p id="postal-code-error-message"></p>
           </div>
           <!----- address ----->
           <div class="j-formIn">
             <div class="j-inner">
-              <label>ご住所</label><input type="text" name="address" id="address">
+              <label>ご住所</label><input type="text" name="address" id="address" value="<?php echo h($address); ?>">
             </div>
             <p id="address-error-message"></p>
           </div>
@@ -321,16 +346,12 @@ mail($to, $subject, $message, $headers);
   <!-- js -->
   <script defer type="text/javascript" src="./js/app.js"></script>
   <script defer type="text/javascript" src="./js/youtube.js"></script>
-  <script defer type="text/javascript" src="./js/form.js"></script>
   <script defer type="text/javascript" src="./js/query.js"></script>
   <script defer type="text/javascript" src="./js/animation.js"></script>
   <script defer type="text/javascript" src="./js/matchMedia.js"></script>
   <script defer type="text/javascript" src="./js/onLoad.js"></script>
+  <script defer type="text/javascript" src="./js/form.js"></script>
+
 </body>
 
 </html>
-<script>
-// トップお問合わせ・資料請求切替
-var buttonTop = document.getElementsByClassName('j-bu-success');
-console.log(buttonTop[0].textContent);
-</script>
