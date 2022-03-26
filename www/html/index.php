@@ -219,43 +219,11 @@ require 'contact/contact.php';
 
       <!----- j-recommend ----->
       <section class="j-form" id="jForm">
-        <h3 class="j-form-title">お問合せ・資料請求</h3>
-        <?php if (!empty($error) && $error && !$result): // 送信が失敗した場合?>
-        <script>
-        var form = document.getElementById('form');
-        form.reset();
-        </script>
-        <h4>送信失敗</h4>
-        <p>申し訳ございませんが、送信に失敗しました。</p>
-        <p>しばらくしてもう一度お試しになるか、メールにてご連絡ください。</p>
-        <p>メール：<a href="mailto:info@example.com">Contact</a></p>
-        <span><?php if (isset($error['subject'])) {
-    echo h($error['subject']);
-} ?></span>
-        <span><?php if (isset($error['name'])) {
-    echo h($error['name']);
-} ?></span>
-        <span><?php if (isset($error['tel'])) {
-    echo h($error['tel']);
-} ?></span>
-        <span><?php if (isset($error['email'])) {
-    echo h($error['email']);
-} ?></span>
-        <span><?php if (isset($error['postCode'])) {
-    echo h($error['postCode']);
-} ?></span>
-        <span><?php if (isset($error['address'])) {
-    echo h($error['address']);
-} ?></span>
-        <span><?php if (isset($error['body'])) {
-    echo h($error['body']);
-} ?></span>
-        <hr>
-        <?php endif; ?>
+        <h3 class="j-form-title">お問い合せ・資料請求</h3>
         <form id="form">
           <div class="j-fo-top">
-            <input type="radio" name="subject" value="お問合せ" id="foContact" checked required>
-            <label for="foContact" class="j-button j-bu-success">お問合せ</label>
+            <input type="radio" name="subject" value="お問い合せ" id="foContact" checked required>
+            <label for="foContact" class="j-button j-bu-success">お問い合せ</label>
             <input type="radio" name="subject" value="資料請求" id="foDocument">
             <label for="foDocument" class="j-button">資料請求</label>
           </div>
@@ -264,7 +232,6 @@ require 'contact/contact.php';
             <div class="j-inner">
               <label>お名前</label><input type="text" name="name" id="name" value="<?php echo h($name); ?>">
             </div>
-
             <p id="name-error-message"></p>
           </div>
           <!----- tel ----->
@@ -309,7 +276,7 @@ require 'contact/contact.php';
           <!----- textarea ----->
           <div class="j-formIn">
             <div class="j-inner">
-              <label id="j-text">お問合せ内容</label><textarea name="body" id="textarea" rows="6"
+              <label id="j-text">お問い合せ内容</label><textarea name="body" id="textarea" rows="6"
                 cols="40"><?php echo h($body); ?></textarea>
             </div>
             <p id="textarea-error-message"></p>

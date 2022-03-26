@@ -21,8 +21,8 @@ $body = filter_input(INPUT_GET, 'body');
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>送信完了</title>
-  <link rel="stylesheet" href="css/complete.css" />
+  <title>送信エラー</title>
+  <link rel="stylesheet" href="css/error.css" />
 </head>
 
 <body>
@@ -30,12 +30,12 @@ $body = filter_input(INPUT_GET, 'body');
     <div class="container">
       <!-- <img class="logo" src="../image/logo.png" alt=""> -->
       <div class="inner">
-        <h4>送信完了いたしました</h4>
-        <p>この度は、お問い合せ頂き誠にありがとうございます。</br>以下の内容でお問い合せを受け付けました。</p>
+        <h4>送信失敗</h4>
+        <p>申し訳ございませんが、送信に失敗しました。</p>
         <div class="table-responsive">
           <table class="table">
             <tr>
-              <th>件 名</th>
+              <th>件名</th>
               <td><?php if ($subject) {
     echo h($subject);
 } ?></td>
@@ -72,14 +72,14 @@ $body = filter_input(INPUT_GET, 'body');
     } ?></td>
             </tr>
             <tr>
-              <th>住 所</th>
+              <th>住所</th>
               <td><?php if ($address) {
         echo h($address);
     } ?></td>
             </tr>
             <tr>
               <th>お問い合せ内容</th>
-              <td class="body-text"><?php if ($body) {
+              <td><?php if ($body) {
         echo h($body);
     } ?></td>
             </tr>

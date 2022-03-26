@@ -1,0 +1,271 @@
+/* Google Fonts */
+@import url(https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600&display=swap);
+
+@import './reset.scss';
+
+/* 変数 */
+$breakPoint-pc: 600px;
+$breakPoint-mobile: 500px;
+$notoSerif: 'Noto Serif JP', serif, 'MS P明朝', 'ヒラギノ明朝';
+
+/* カラー */
+$fontColor: #030508;
+$white: #fff;
+$red: #a52323;
+
+/* 関数 */
+@mixin max-screen($break-point) {
+  @media screen and(max-width:$break-point) {
+    @content;
+  }
+}
+
+@mixin min-screen($break-point) {
+  @media screen and(min-width:$break-point) {
+    @content;
+  }
+}
+
+@mixin flex($f-Disply, $f-Content, $f-Row, $f-align) {
+  display: $f-Disply;
+  justify-content: $f-Content;
+  flex-direction: $f-Row;
+  align-items: $f-align;
+}
+
+@mixin widthSize($widthSize) {
+  width: $widthSize;
+}
+
+@mixin heightSize($heightSize) {
+  height: $heightSize;
+}
+
+@mixin fz($size, $weight) {
+  font-size: ($size / 10) + rem;
+  font-weight: $weight;
+}
+
+@mixin margin($maValue) {
+  margin: $maValue;
+}
+
+@mixin padding($paValue) {
+  padding: $paValue;
+}
+
+@mixin border {
+  border: 1px solid $fontColor;
+}
+
+@mixin radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin position($position, $top, $right, $bottom, $left) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin backColor($backColor) {
+  background-color: $backColor;
+}
+
+@mixin display($display) {
+  display: $display;
+}
+
+@mixin color($color) {
+  color: $color;
+}
+
+@mixin cursor {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+/* アニメーション設定 */
+.scr-target {
+  opacity: 0;
+  transform: translate3d(0, 50px, 0);
+}
+.scr-target.is-active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  transition: 2s;
+}
+
+/* スタイル */
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @include color($fontColor);
+  @include min-screen($breakPoint-pc) {
+    font-size: 15px;
+  }
+  font-family: $notoSerif;
+  font-weight: 400;
+  overflow: scroll;
+}
+
+a {
+  text-decoration: none;
+  @include color($fontColor);
+}
+
+#main {
+  @include min-screen($breakPoint-pc) {
+    display: block;
+  }
+
+  .container {
+    @include margin(8rem 0);
+    @include widthSize(100%);
+    @include heightSize(100%);
+    @include flex(flex, center, row, center);
+    // smt
+    @include max-screen($breakPoint-mobile) {
+      @include margin(0);
+    }
+
+    .logo {
+      @include position(absolute, 3rem, 0, 0, 5rem);
+      @include widthSize(12.6rem);
+      @include heightSize(auto);
+      @include margin(0 0 5.7rem);
+      // smt
+      @include max-screen($breakPoint-mobile) {
+        @include display(none);
+      }
+    }
+
+    .inner {
+      @include widthSize(100%);
+      @include margin(0 auto);
+
+      // smt
+      @include max-screen($breakPoint-mobile) {
+        @include widthSize(90%);
+        @include margin(5rem 0 0);
+      }
+
+      h4 {
+        text-align: center;
+        @include fz(26, 400);
+        @include margin(0 auto 3.5rem);
+        letter-spacing: 0.1rem;
+        @include color($red);
+        border: 1px solid #ccaeae;
+        @include widthSize(70%);
+        @include padding(2rem 0);
+
+        // smt
+        @include max-screen($breakPoint-mobile) {
+          @include fz(22, 400);
+          @include margin(0 0 3rem 0);
+        }
+      }
+
+      p {
+        text-align: center;
+        @include fz(18, 400);
+        @include margin(0 0 3.5rem 0);
+        line-height: 2;
+        letter-spacing: 0.1rem;
+
+        // smt
+        @include max-screen($breakPoint-mobile) {
+          @include fz(16, 400);
+          br {
+            @include display(none);
+          }
+        }
+      }
+
+      .table-responsive {
+        @include padding(4rem 0 0 0);
+        border-top: 1px solid #cecece;
+        @include widthSize(70%);
+        @include margin(0 auto);
+
+        // smt
+        @include max-screen($breakPoint-mobile) {
+          @include padding(0);
+          @include widthSize(100%);
+          border: none;
+        }
+        .table {
+          @include widthSize(100%);
+          @include margin(0 auto);
+          tr {
+            @include margin(0 auto 2.2rem);
+            @include display(block);
+            @include widthSize(100%);
+            th {
+              @include fz(14, 300);
+              color: #a0a0a0;
+              @include widthSize(18rem);
+              border: 1px solid #a0a0a0;
+              @include padding(1.3rem 0);
+              vertical-align: middle;
+
+              // smt
+              @include max-screen($breakPoint-mobile) {
+                @include display(block);
+                @include widthSize(100%);
+                @include fz(15, 300);
+              }
+            }
+            td {
+              @include fz(16, 300);
+              @include padding(0 0 0 3.5rem);
+              vertical-align: middle;
+              @include color($red);
+              // smt
+              @include max-screen($breakPoint-mobile) {
+                @include margin(1.5rem auto 3rem);
+                @include display(block);
+                text-align: center;
+                @include padding(0);
+              }
+            }
+
+            .body-text {
+              line-height: 2.2;
+            }
+          }
+        }
+        button {
+          @include display(block);
+          @include margin(2rem auto 6rem);
+          @include widthSize(100%);
+          @include heightSize(6rem);
+          @include fz(16, 400);
+          font-family: $notoSerif;
+          line-height: 6rem;
+          @include backColor($white);
+          @include color($fontColor);
+          @include cursor();
+          @include border();
+          //smt
+          @include max-screen($breakPoint-mobile) {
+            @include fz(16, 300);
+            @include margin(0 auto 6rem);
+          }
+        }
+      }
+    }
+  }
+}

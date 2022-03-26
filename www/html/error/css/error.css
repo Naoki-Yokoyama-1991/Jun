@@ -1,0 +1,292 @@
+@charset "UTF-8";
+/* Google Fonts */
+@import url(https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500;600&display=swap);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 変数 */
+/* カラー */
+/* 関数 */
+/* アニメーション設定 */
+.scr-target {
+  opacity: 0;
+  -webkit-transform: translate3d(0, 50px, 0);
+          transform: translate3d(0, 50px, 0);
+}
+
+.scr-target.is-active {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+/* スタイル */
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  color: #030508;
+  font-family: "Noto Serif JP", serif, "MS P明朝", "ヒラギノ明朝";
+  font-weight: 400;
+  overflow: scroll;
+}
+
+@media screen and (min-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #030508;
+}
+
+@media screen and (min-width: 600px) {
+  #main {
+    display: block;
+  }
+}
+
+#main .container {
+  margin: 7rem 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+  #main .container {
+    margin: 0;
+  }
+}
+
+#main .container .logo {
+  position: absolute;
+  top: 3rem;
+  right: 0;
+  bottom: 0;
+  left: 5rem;
+  width: 12.6rem;
+  height: auto;
+  margin: 0 0 5.7rem;
+}
+
+@media screen and (max-width: 500px) {
+  #main .container .logo {
+    display: none;
+  }
+}
+
+#main .container .inner {
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+  #main .container .inner {
+    width: 90%;
+    margin: 5rem 0 0;
+  }
+}
+
+#main .container .inner h4 {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 400;
+  margin: 0 auto 3.5rem;
+  letter-spacing: 0.1rem;
+  color: #a52323;
+  border: 1px solid #ccaeae;
+  width: 70%;
+  padding: 2rem 0;
+}
+
+@media screen and (max-width: 500px) {
+  #main .container .inner h4 {
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin: 0 0 3rem 0;
+  }
+}
+
+#main .container .inner p {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 0 0 3.5rem 0;
+  line-height: 2;
+  letter-spacing: 0.1rem;
+}
+
+@media screen and (max-width: 500px) {
+  #main .container .inner p {
+    font-size: 1.6rem;
+    font-weight: 400;
+  }
+  #main .container .inner p br {
+    display: none;
+  }
+}
+
+#main .container .inner .table-responsive {
+  padding: 4rem 0 0 0;
+  border-top: 1px solid #cecece;
+  width: 70%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 500px) {
+  #main .container .inner .table-responsive {
+    padding: 0;
+    width: 100%;
+    border: none;
+  }
+}
+
+#main .container .inner .table-responsive .table {
+  width: 100%;
+  margin: 0 auto;
+}
+
+#main .container .inner .table-responsive .table tr {
+  margin: 0 auto 2.2rem;
+  display: block;
+  width: 100%;
+}
+
+#main .container .inner .table-responsive .table tr th {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: #a0a0a0;
+  width: 18rem;
+  border: 1px solid #a0a0a0;
+  padding: 1.3rem 0;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 500px) {
+  #main .container .inner .table-responsive .table tr th {
+    display: block;
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+}
+
+#main .container .inner .table-responsive .table tr td {
+  font-size: 1.6rem;
+  font-weight: 300;
+  padding: 0 0 0 3.5rem;
+  vertical-align: middle;
+  color: #a52323;
+}
+
+@media screen and (max-width: 500px) {
+  #main .container .inner .table-responsive .table tr td {
+    margin: 1.5rem auto 3rem;
+    display: block;
+    text-align: center;
+    padding: 0;
+  }
+}
+
+#main .container .inner .table-responsive .table tr .body-text {
+  line-height: 2.2;
+}
+
+#main .container .inner .table-responsive button {
+  display: block;
+  margin: 2rem auto 6rem;
+  width: 100%;
+  height: 6rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: "Noto Serif JP", serif, "MS P明朝", "ヒラギノ明朝";
+  line-height: 6rem;
+  background-color: #fff;
+  color: #030508;
+  border: 1px solid #030508;
+}
+
+#main .container .inner .table-responsive button:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  #main .container .inner .table-responsive button {
+    font-size: 1.6rem;
+    font-weight: 300;
+    margin: 0 auto 6rem;
+  }
+}
+/*# sourceMappingURL=error.css.map */

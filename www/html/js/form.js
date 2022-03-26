@@ -71,7 +71,7 @@ window.addEventListener(
     var buttonTop = doc.getElementsByClassName('j-button');
 
     //読み込み時
-    if (buttonTop[0].textContent == 'お問合せ') {
+    if (buttonTop[0].textContent == 'お問い合せ') {
       buttonTop[0].classList.add('j-bu-success');
       email.before(must_element_2);
       name.before(must_element_4);
@@ -147,7 +147,7 @@ window.addEventListener(
         //textarea span 追加
         textarea.before(must_element_5);
         email.before(must_element_2);
-        doc.getElementById('j-text').innerText = 'お問合せ内容';
+        doc.getElementById('j-text').innerText = 'お問い合せ内容';
       }
       funcReset();
     });
@@ -229,7 +229,7 @@ window.addEventListener(
 
     //入力時アクション
     //name
-    name.addEventListener('load', (e) => {
+    name.addEventListener('keyup', (e) => {
       if (name.value) {
         funcTrue(name, name_error_message);
       } else {
@@ -264,7 +264,7 @@ window.addEventListener(
     });
 
     //email
-    email.addEventListener('load', (e) => {
+    email.addEventListener('keyup', (e) => {
       if (buttonTop[0].className.match(/j-bu-success/)) {
         if (!email.value) {
           funcError(email, email_error_message, 'メールアドレスは必須です。');
@@ -376,7 +376,7 @@ window.addEventListener(
     });
 
     //textarea
-    textarea.addEventListener('load', (e) => {
+    textarea.addEventListener('keyup', (e) => {
       if (buttonTop[0].className.match(/j-bu-success/)) {
         if (textarea.value) {
           console.log('sss');
@@ -385,7 +385,7 @@ window.addEventListener(
           funcError(
             textarea,
             textarea_error_message,
-            'お問合せ内容は必須です。'
+            'お問い合せ内容は必須です。'
           );
           funcCrea(textarea, textarea_error_message);
         }

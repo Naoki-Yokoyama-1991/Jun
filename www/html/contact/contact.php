@@ -5,6 +5,7 @@ require 'libs/functions.php';
 
 
 //POSTされたデータを変数に格納（値の初期化とデータの整形：前後にあるホワイトスペースを削除）
+$subject = filter_input(INPUT_POST, 'subject');
 $name = trim(filter_input(INPUT_POST, 'name'));
 $tel = trim(filter_input(INPUT_POST, 'tel'));
 // $subject = trim(filter_input(INPUT_POST, 'subject'));
@@ -12,9 +13,9 @@ $email = trim(filter_input(INPUT_POST, 'email'));
 $postCode = trim(filter_input(INPUT_POST, 'postCode'));
 $address = trim(filter_input(INPUT_POST, 'address'));
 $body = trim(filter_input(INPUT_POST, 'body'));
-$subject = filter_input(INPUT_POST, 'subject');
 $send = filter_input(INPUT_POST, 'send');
 //送信ボタンが押された場合の処理if
+
 if (isset($_POST['submitted'])) {
 
     //POSTされたデータをチェック
@@ -31,7 +32,7 @@ if (isset($_POST['submitted'])) {
         $error['name'] = '*お名前は30文字以内でお願いします。';
     }
     //email
-    if ($subject == "お問合せ" && $email == '') {
+    if ($subject == "お問い合せ" && $email == '') {
         $error['email'] = '*メールアドレスは必須です。';
     } elseif ($send == "Eメール" && $subject == "資料請求" && $email == '') {
         $error['email'] = '*メールアドレスは必須です。';
@@ -47,7 +48,6 @@ if (isset($_POST['submitted'])) {
             $error['postCode'] = '*郵便番号の形式が正しくありません。';
         }
     }
-
     //住所
     if ($send == "ご自宅" && $subject == "資料請求" && $address == '') {
         $error['address'] = '*住所は必須です。';
@@ -65,12 +65,12 @@ if (isset($_POST['submitted'])) {
     } elseif (preg_match('/\A[[:^cntrl:]]{1,50}\z/u', $subject) == 0) {
         $error['subject'] = '*件名は50文字以内でお願いします。';
     }
-    //お問合せ
-    if ($subject == "お問合せ" && $body == '') {
+    //お問い合せ
+    if ($subject == "お問い合せ" && $body == '') {
         $error['body'] = '*内容は必須項目です。';
     //制御文字（タブ、復帰、改行を除く）でないことと文字数をチェック
-    } elseif ($subject == "お問合せ" && preg_match('/\A[\r\n\t[:^cntrl:]]{1,300}\z/u', $body) == 0) {
-        $error['body'] = '*内容は300文字以内でお願いします。';
+    } elseif ($subject == "お問い合せ" && preg_match('/\A[\r\n\t[:^cntrl:]]{1,500}\z/u', $body) == 0) {
+        $error['body'] = '*内容は500文字以内でお願いします。';
     }
 
     //エラーがなく且つ POST でのリクエストの場合
@@ -80,13 +80,18 @@ if (isset($_POST['submitted'])) {
 
 
         //メール本文の組み立て
+        //本文
+        $mail_body .= $name." 様よりお問い合せがありました。" . "\n\n";
         $mail_body .=  "件名： " .h($subject) . "\n";
         $mail_body .=  "お名前： " .h($name) . "\n";
-        $mail_body .=  "お電話番号： " . h($tel) . "\n\n" ;
+        $mail_body .=  "お電話番号： " . h($tel) . "\n" ;
+        if ($subject == "資料請求") {
+            $mail_body .=  "資料送付先： " . h($send) . "\n" ;
+        }
         $mail_body .=  "メールアドレス： " . h($email) . "\n"  ;
         $mail_body .=  "郵便番号： " . h($postCode) . "\n"  ;
-        $mail_body .=  "住所： " . h($address) . "\n"  ;
-        $mail_body .=  "＜お問い合わせ内容＞" . "\n" . h($body);
+        $mail_body .=  "住所： " . h($address) . "\n\n"  ;
+        $mail_body .=  "＜お問い合せ内容＞" . "\n" . h($body);
 
 
         //--------sendmail------------
@@ -127,23 +132,27 @@ if (isset($_POST['submitted'])) {
             $ar_header .= "From: " . mb_encode_mimeheader(AUTO_REPLY_NAME) . " <" . MAIL_TO . ">\n";
             $ar_header .= "Reply-To: " . mb_encode_mimeheader(AUTO_REPLY_NAME) . " <" . MAIL_TO . ">\n";
             //件名
-            $ar_subject = 'お問い合わせ自動返信メール';
+            $ar_subject = $subject . '自動返信メール';
             //本文
             $ar_body = $name." 様\n\n";
-            $ar_body .= "この度は、お問い合わせ頂き誠にありがとうございます。" . "\n\n";
-            $ar_body .= "下記の内容でお問い合わせを受け付けました。\n\n";
+            $ar_body .= "この度は、お問い合せ頂き誠にありがとうございます。" . "\n\n";
+            $ar_body .= "下記の内容でお問い合せを受け付けました。\n\n";
             //日付
             // 'Y/m/d'曜日
             $w = date('w');
             $week = ['日', '月', '火', '水', '木', '金', '土'];
 
-            $ar_body .= "お問い合わせ日時：" . date("Y年m月d日") ."(".$week[$w]."曜日".")".  date("H時i分") . "\n";
+            $ar_body .= "件名：" . $subject . "\n";
+            $ar_body .= "お問い合せ日時：" . date("Y年m月d日") ."(".$week[$w]."曜日".")".  date("H時i分") . "\n";
             $ar_body .= "お名前：" . $name . "\n";
-            $ar_body .= "お電話番号： " . $tel . "\n\n" ;
+            $ar_body .= "お電話番号： " . $tel . "\n" ;
+            if ($subject == "資料請求") {
+                $ar_body .=  "資料送付先： " . $send . "\n" ;
+            }
             $ar_body .= "メールアドレス：" . $email . "\n";
             $ar_body .= "郵便番号： " . $postCode . "\n";
             $ar_body .= "住所： " . $address . "\n\n" ;
-            $ar_body .="＜お問い合わせ内容＞" . "\n" . $body;
+            $ar_body .="＜お問い合せ内容＞" . "\n" . $body;
   
             //自動返信メールを送信（送信結果を変数 $result2 に代入）
             if (ini_get('safe_mode')) {
@@ -159,6 +168,9 @@ if (isset($_POST['submitted'])) {
             $params .= '&subject='. h($subject);
             $params .= '&name='. h($name);
             $params .= '&tel='. h($tel);
+            if ($subject == "資料請求") {
+                $params .= '&send='. h($send);
+            }
             $params .= '&email='. h($email);
             $params .= '&postCode='. h($postCode);
             $params .= '&address='. h($address);
@@ -189,5 +201,20 @@ if (isset($_POST['submitted'])) {
             // header('Location:' . $url . $params);
             // exit;
         }
+    } else {
+        $params = '?';
+        $params .= '&subject='. h($error['subject']);
+        $params .= '&name='. h($error['name']);
+        $params .= '&tel='. h($error['tel']);
+        if ($subject == "資料請求") {
+            $params .= '&send='. h($error['send']);
+        }
+        $params .= '&email='. h($error['email']);
+        $params .= '&postCode='. h($error['postCode']);
+        $params .= '&address='. h($error['address']);
+        $params .= '&body='. h($error['body']);
+
+        $urlEr = 'error/error.php';
+        header('Location:' . $urlEr . $params);
     }
 }
