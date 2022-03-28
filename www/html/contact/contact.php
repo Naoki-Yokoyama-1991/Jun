@@ -1,6 +1,13 @@
 <?php
 //エスケープ処理やデータチェックを行う関数のファイルの読み込み
 require 'libs/functions.php';
+require 'config/recaptcha_vars.php';
+// reCAPTCHA サイトキー
+$siteKey = V3_SITEKEY;
+// reCAPTCHA シークレットキー
+$secretKey = V3_SECRETKEY;
+//お問い合わせ日時を日本時間に
+date_default_timezone_set('Asia/Tokyo');
 
 
 
@@ -16,13 +23,56 @@ $body = trim(filter_input(INPUT_POST, 'body'));
 $send = filter_input(INPUT_POST, 'send');
 //送信ボタンが押された場合の処理if
 
-if (isset($_POST['submitted'])) {
+//reCAPTCHA トークン
+$token = filter_input(INPUT_POST, 'g-recaptcha-response');
+//reCAPTCHA アクション名
+$action = filter_input(INPUT_POST, 'action');
 
+//reCAPTCHA の検証を通過したかどうかの真偽値
+$result_status = false;
+
+//★トークン（$_POST['g-recaptcha-response']）が設定されていれば以下を実行
+if (isset($_POST['g-recaptcha-response'])) {
     //POSTされたデータをチェック
     $_POST = checkInput($_POST);
-
+    // トークンとアクション名が取得できれば
+    if ($token && $action) {
+        //cURL セッションを初期化（API のレスポンスの取得）
+        $ch = curl_init();
+        // curl_setopt() により転送時のオプションを設定
+        //URL の指定
+        curl_setopt($ch, CURLOPT_URL, "https://www.google.com/recaptcha/api/siteverify");
+        //HTTP POST メソッドを使う
+        curl_setopt($ch, CURLOPT_POST, true);
+        //API パラメータの指定
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query(array(
+      'secret' => $secretKey,
+      'response' => $token
+    )));
+        //curl_execの返り値を文字列にする
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        //転送を実行してレスポンスを $api_response に格納
+        $api_response = curl_exec($ch);
+        //セッションを終了
+        curl_close($ch);
+        //レスポンスの $json（JSON形式）をデコード
+        $rc_result = json_decode($api_response);
+        //判定
+        if ($rc_result->success && $rc_result->action === $action && $rc_result->score >= 0.5) {
+            //success が true でアクション名が一致し、スコアが 0.5 以上の場合は合格
+            $result_status = true;
+        } else {
+            // 上記以外の場合は 不合格
+            $result_status = false;
+        }
+    }
     //エラーメッセージを保存する配列の初期化
     $error = array();
+    //reCAPTCHA 検証（判定結果 $result_status が false ならエラーを表示）
+    if (!$result_status) {
+        $error['recaptcha'] = '検証が失敗しました。';
+    }
+
     //値の検証
     //名前
     if ($name == '') {
@@ -69,8 +119,8 @@ if (isset($_POST['submitted'])) {
     if ($subject == "お問い合せ" && $body == '') {
         $error['body'] = '*内容は必須項目です。';
     //制御文字（タブ、復帰、改行を除く）でないことと文字数をチェック
-    } elseif ($subject == "お問い合せ" && preg_match('/\A[\r\n\t[:^cntrl:]]{1,500}\z/u', $body) == 0) {
-        $error['body'] = '*内容は500文字以内でお願いします。';
+    } elseif ($subject == "お問い合せ" && preg_match('/\A[\r\n\t[:^cntrl:]]{1,1050}\z/u', $body) == 0) {
+        $error['body'] = '*内容は1000文字以内でお願いします。';
     }
 
     //エラーがなく且つ POST でのリクエストの場合
@@ -111,6 +161,8 @@ if (isset($_POST['submitted'])) {
         $header = "From:" . mb_encode_mimeheader($name) . "<" . $email. ">\n";
         $header .= "Cc: " . mb_encode_mimeheader(MAIL_CC_NAME) ."<" . MAIL_CC.">\n";
         $header .= "Bcc: <" . MAIL_BCC.">";
+        $header .= "Content-Type: text/plain \r\n";
+
 
         //メールの送信
         //メールの送信結果を変数に代入
@@ -192,11 +244,13 @@ if (isset($_POST['submitted'])) {
             header('Location:' . $url . $params);
 
             // //再読み込みによる二重送信の防止
-            // $params = '?result='. $result;
+            // $params = '?result='. $result .'&result2=' . $result2;
             // //サーバー変数 $_SERVER['HTTPS'] が取得出来ない環境用
             // if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) and $_SERVER['HTTP_X_FORWARDED_PROTO'] === "https") {
             //     $_SERVER['HTTPS'] = 'on';
             // }
+            // //reCAPTCHA 検証結果確認用パラメータ
+            // $params .= '&success=' . $rc_result->success  .'&action=' . $rc_result->action .'&score=' . $rc_result->score;
             // $url = (empty($_SERVER['HTTPS']) ? 'http://' : 'https://').$_SERVER['HTTP_HOST'].$_SERVER['SCRIPT_NAME'];
             // header('Location:' . $url . $params);
             // exit;
@@ -209,6 +263,7 @@ if (isset($_POST['submitted'])) {
         if ($subject == "資料請求") {
             $params .= '&send='. h($error['send']);
         }
+        $params .= '&recaptcha='. h($error['recaptcha']);
         $params .= '&email='. h($error['email']);
         $params .= '&postCode='. h($error['postCode']);
         $params .= '&address='. h($error['address']);

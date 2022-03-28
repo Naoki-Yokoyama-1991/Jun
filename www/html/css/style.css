@@ -1661,9 +1661,17 @@ form .j-formIn:last-child {
   border: none;
 }
 
+.privacy {
+  margin: 0 0 5rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+  text-align: center;
+}
+
 /* footer */
-footer {
-  margin: 5rem auto 16rem;
+.footer {
+  margin: 5rem auto 8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1681,24 +1689,24 @@ footer {
 }
 
 @media screen and (max-width: 500px) {
-  footer {
+  .footer {
     margin: 5rem auto;
   }
 }
 
-footer div {
+.footer div {
   width: 3.5rem;
   margin: 0 4rem;
 }
 
 @media screen and (max-width: 500px) {
-  footer div {
+  .footer div {
     width: 3rem;
     margin: 0 3rem;
   }
 }
 
-footer div img {
+.footer div img {
   width: 100%;
 }
 
@@ -1768,5 +1776,9 @@ footer div img {
 
 #loading-main:before {
   border: 1px solid rgba(51, 51, 51, 0.15);
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
 }
 /*# sourceMappingURL=style.css.map */

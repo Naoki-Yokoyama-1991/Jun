@@ -13,6 +13,7 @@ $email = filter_input(INPUT_GET, 'email');
 $postCode = filter_input(INPUT_GET, 'postCode');
 $address = filter_input(INPUT_GET, 'address');
 $body = filter_input(INPUT_GET, 'body');
+$recaptcha = filter_input(INPUT_GET, 'recaptcha');
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -35,7 +36,14 @@ $body = filter_input(INPUT_GET, 'body');
         <div class="table-responsive">
           <table class="table">
             <tr>
-              <th>件名</th>
+              <th>検 証</th>
+              <td><?php if ($recaptcha) {
+    echo h($recaptcha);
+} ?></td>
+            </tr>
+            <tr>
+            <tr>
+              <th>件 名</th>
               <td><?php if ($subject) {
     echo h($subject);
 } ?></td>
@@ -72,7 +80,7 @@ $body = filter_input(INPUT_GET, 'body');
     } ?></td>
             </tr>
             <tr>
-              <th>住所</th>
+              <th>住 所</th>
               <td><?php if ($address) {
         echo h($address);
     } ?></td>

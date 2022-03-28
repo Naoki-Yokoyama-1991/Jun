@@ -37,7 +37,7 @@ require 'contact/contact.php';
 
   <!-- js -->
   <script src="https://cdn.jsdelivr.net/npm/imagesloaded@4.1.4/imagesloaded.pkgd.min.js"></script>
-
+  <script src="https://www.google.com/recaptcha/api.js?render=<?php echo $siteKey; ?>"></script>
 
 </head>
 
@@ -287,26 +287,33 @@ require 'contact/contact.php';
             </div>
           </div>
         </form>
+
       </section>
 
     </main>
     <!----- footer ----->
     <footer>
-      <a href="#">
-        <div>
-          <img src="image/sns/twitter.jpg">
-        </div>
-      </a>
-      <a href="#">
-        <div>
-          <img src="image/sns/facebook.jpg">
-        </div>
-      </a>
-      <a href="#">
-        <div>
-          <img src="image/sns/instagram.jpg">
-        </div>
-      </a>
+      <div class="footer">
+        <a href="#">
+          <div>
+            <img src="image/sns/twitter.jpg">
+          </div>
+        </a>
+        <a href="#">
+          <div>
+            <img src="image/sns/facebook.jpg">
+          </div>
+        </a>
+        <a href="#">
+          <div>
+            <img src="image/sns/instagram.jpg">
+          </div>
+        </a>
+      </div>
+      <div class="privacy">
+        <a href="https://policies.google.com/privacy">Privacy Policy and</a>
+        <a href="https://policies.google.com/terms"> Terms of Service apply.</a>
+      </div>
     </footer>
 
   </div>
@@ -318,7 +325,6 @@ require 'contact/contact.php';
   <script defer type="text/javascript" src="./js/matchMedia.js"></script>
   <script defer type="text/javascript" src="./js/onLoad.js"></script>
   <script defer type="text/javascript" src="./js/form.js"></script>
-
 </body>
 
 </html>

@@ -1278,10 +1278,16 @@ form {
     border: none;
   }
 }
+.privacy {
+  @include margin(0 0 5rem);
+  @include fz(12, 300);
+  letter-spacing: 0.05rem;
+  text-align: center;
+}
 
 /* footer */
-footer {
-  @include margin(5rem auto 16rem);
+.footer {
+  @include margin(5rem auto 8rem);
   @include flex(flex, center, row, center);
   @include widthSize(100%);
 
@@ -1371,4 +1377,8 @@ footer {
 }
 #loading-main:before {
   border: 1px solid rgba(51, 51, 51, 0.15);
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
 }

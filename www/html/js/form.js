@@ -434,9 +434,32 @@ window.addEventListener(
 
     //submit
     btn.addEventListener('click', (e) => {
-      form.method = 'post';
-      form.action = 'index.php'; //← PHPファイル
-      form.submit();
+      //デフォルトの動作（送信）を停止
+      e.preventDefault();
+      //アクション名を定義
+      const action_name = 'contact';
+      //トークンを取得
+      grecaptcha.ready(function () {
+        grecaptcha
+          .execute('6LdzVe0eAAAAAP2KAlVicI5cs8ifnpC7rccG30Io', {
+            action: action_name,
+          })
+          .then(function (token) {
+            var token_input = document.createElement('input'); //input 要素を生成
+            token_input.type = 'hidden';
+            token_input.name = 'g-recaptcha-response';
+            token_input.value = token; //トークンを値に設定
+            form.appendChild(token_input);
+            var action_input = document.createElement('input'); //input 要素を生成
+            action_input.type = 'hidden';
+            action_input.name = 'action';
+            action_input.value = action_name; //アクション名を値に設定
+            form.appendChild(action_input);
+            form.method = 'post';
+            form.action = 'index.php'; //← PHPファイル
+            form.submit(); //フォームを送信
+          });
+      });
     });
   },
 
